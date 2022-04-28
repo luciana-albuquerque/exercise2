@@ -1,0 +1,23 @@
+@use "/src/client/assets/styles/styles" as s;
+
+.navbar {
+    @include s.flexCenter(row);
+    justify-content: space-between;
+    color: s.$thirdColor;
+    font-size: .8rem;
+    padding: 5px;
+    margin: 10px;
+
+    a {
+        margin: 5px;
+    }
+
+    .shop {
+        @include s.flexCenter(column);
+        flex-grow: 1;
+
+        ul {
+            @include s.flexCenter(row);
+        }
+    }
+}

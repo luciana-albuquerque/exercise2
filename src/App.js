@@ -1,10 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import LandingPage from './client/components/views/LandingPage';
 
 function App() {
   return (
     <div className="App">
-      <h1>Wellcome</h1>
+      <LandingPage />
     </div>
   );
 }
