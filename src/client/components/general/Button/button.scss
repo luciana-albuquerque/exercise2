@@ -1,0 +1,15 @@
+@use '/src/client/assets/styles/styles' as s;
+@import '../../../assets/styles/variables';
+
+button {
+    border: 1.5px solid $primaryColor;
+    background-color: transparent;
+    padding: 8px 40px;
+    margin: 10px 0px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    &:hover {
+        color: white;
+        background-color: $primaryColor;
+    }
+}

@@ -1,0 +1,27 @@
+@use '/src/client/assets/styles/styles' as s;
+
+.home {
+    background-image: url('../../../assets/images/background-home.png');
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+
+    .article {
+        position: absolute;
+        top: 40vh;
+        left: 10vw; 
+    }
+
+    .new {
+        position: absolute;
+        top: 35vh;
+        left: 10vw; 
+    }
+}
+
+.banner {
+    @include s.flexCenter(column);
+
+    width: 100vw;
+}

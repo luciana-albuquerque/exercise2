@@ -1,0 +1,10 @@
+@use '/src/client/assets/styles/styles' as s;
+@import '../../../assets/styles/variables';
+
+.promo {
+    @include s.flexCenter(column);
+    justify-content: center;
+    background-color: $thirdColor;
+    color: white;
+    height: 40px;
+}

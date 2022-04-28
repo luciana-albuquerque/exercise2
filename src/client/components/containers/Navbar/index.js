@@ -1,5 +1,6 @@
 import React from 'react'
-import './containers.scss'
+import './navbar.scss'
+import lupa from '../../../assets/images/lupa.png'
 
 function Navbar() {
   return (
@@ -9,7 +10,7 @@ function Navbar() {
         <a href='about'>CONSULTATION</a>
       </div>
       <div className="shop">
-        sooth
+        <h3>sooth</h3>
         <ul>
           <li><a href='about'>Acne</a></li>
           <li><a href='about'>Sun</a></li>
@@ -19,7 +20,7 @@ function Navbar() {
         </ul>
       </div>
       <div className="account">
-        {/* <input>Searchbar</input> */}
+        <img src={lupa}></img>
         <a href='about'>CART</a>
         <a href='about'>LOGIN</a>
       </div>

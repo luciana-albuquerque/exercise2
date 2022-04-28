@@ -1,0 +1,16 @@
+@use '/src/client/assets/styles/styles' as s;
+@import '../../../assets/styles/variables';
+
+.article {
+    width: 410px;
+
+    h1 {
+        font-size: 3.6rem;
+        margin: 5px 0;
+    }
+    p {
+        font-size: 1.15rem;
+        margin: 15px 0;
+        line-height: 20px;
+    }
+}

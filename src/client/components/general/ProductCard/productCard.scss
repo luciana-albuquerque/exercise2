@@ -1,0 +1,17 @@
+@use '/src/client/assets/styles/styles' as s;
+@import '../../../assets/styles/variables';
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px;
+
+    img {
+        width: 200px;
+    }
+
+    button {
+        width: 100%;
+    }
+}

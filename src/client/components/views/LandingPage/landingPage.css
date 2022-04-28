@@ -1,0 +1,6 @@
+@use '/src/client/assets/styles/styles' as s;
+.banner {
+  width: 100vw;
+  position: absolute;
+}
+/*# sourceMappingURL=landingPage.css.map */
