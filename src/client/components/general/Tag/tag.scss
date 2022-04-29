@@ -1,13 +1,27 @@
 @use '/src/client/assets/styles/styles' as s;
 @import '../../../assets/styles/variables';
 
-.new {
+.tag {
     @include s.flexCenter(row);
-
-    background-color: white;
+    
     justify-content: center;
-    width: 50px;
+    width: fit-content;
     height: 28px;
-    padding: 5px;
+    padding: 0px 10px;
     font-weight: 600;
+}
+
+.white {
+    background-color: white;
+    color: $primaryColor;
+}
+
+.blue {
+    background-color: $secondBackgroundColor;
+    color: $primaryColor;
+}
+
+.beige {
+    background-color: $secondBackgroundColor;
+    color: $thirdColor;
 }

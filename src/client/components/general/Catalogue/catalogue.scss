@@ -5,7 +5,7 @@
     @include s.flexCenter(row);
 
     justify-content: center;
-    height: 100vh;
+    height: 120vh;
     width: 100vw;
 
     section {
@@ -19,6 +19,8 @@
         @include s.flexCenter(row);
         justify-content: space-between;
         padding: 10px;
+        font-weight: 800;
+        font-size: 1.1rem;
     }
 }
 

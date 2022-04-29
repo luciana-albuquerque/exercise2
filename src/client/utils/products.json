@@ -1,0 +1,127 @@
+[
+    {
+        "title": "Shampoo",
+        "description": "Natural ingredients",
+        "price": 24.99,
+        "tag": null,
+        "category": "Top rated"
+    },
+    {
+        "title": "Conditioner",
+        "description": "Natural ingredients",
+        "price": 24.99,
+        "tag": null,
+        "category": "Top rated"
+    },
+    {
+        "title": "Eczema Oil",
+        "description": "Natural ingredients",
+        "price": 24.99,
+        "tag": null,
+        "category": "Top rated"
+    },
+    {
+        "title": "Acne Cream",
+        "description": "Natural ingredients",
+        "price": 24.99,
+        "tag": null,
+        "category": "Top rated"
+    },
+    {
+        "title": "Vitiligio Balm",
+        "description": "Natural ingredients",
+        "price": 24.99,
+        "tag": null,
+        "category": "Top rated"
+    },
+    {
+        "title": "Sunburn Ointment",
+        "description": "Natural ingredients",
+        "price": 24.99,
+        "tag": null,
+        "category": "Top rated"
+    },
+    {
+        "title": "Vitiligio Solution",
+        "description": "Natural ingredients",
+        "price": 24.99,
+        "tag": null,
+        "category": "Top rated"
+    },
+    {
+        "title": "Shampoo",
+        "description": "Natural ingredients",
+        "price": 24.99,
+        "tag": null,
+        "category": "Top rated"
+    },
+    {
+        "title": "Shampoo",
+        "description": "Natural ingredients",
+        "price": 24.99,
+        "tag": null,
+        "category": "Recommended"
+    },
+    {
+        "title": "Shampoo",
+        "description": "Natural ingredients",
+        "price": 24.99,
+        "tag": null,
+        "category": "Recommended"
+    },
+    {
+        "title": "Shampoo",
+        "description": "Natural ingredients",
+        "price": 24.99,
+        "tag": null,
+        "category": "Recommended"
+    },
+    {
+        "title": "Sunburn Balm",
+        "description": "Natural ingredients",
+        "price": 24.99,
+        "tag": null,
+        "category": "Recommended"
+    },
+    {
+        "title": "Psoriasis Cream",
+        "description": "Natural ingredients",
+        "price": 24.99,
+        "tag": {
+            "text": "New!",
+            "theme": "blue"
+        },
+        "img": "",
+        "category": "Most popular"
+    },
+    {
+        "title": "Sunburn Balm",
+        "description": "Natural ingredients",
+        "price": 24.99,
+        "tag": {
+            "text": "15% off",
+            "theme": "beige"
+        },
+        "img": "",
+        "category": "Most popular"
+    },
+    {
+        "title": "Vitiligio Treatment",
+        "description": "Natural ingredients",
+        "price": 24.99,
+        "tag": null,
+        "img": "",
+        "category": "Most popular"
+    },
+    {
+        "title": "Psoriasis Cream",
+        "description": "Natural ingredients",
+        "price": 24.99,
+        "tag": {
+            "text": "New!",
+            "theme": "blue"
+        },
+        "img": "",
+        "category": "Most popular"
+    }
+]

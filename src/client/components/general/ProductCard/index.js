@@ -1,19 +1,22 @@
 import React from 'react'
-import Button from '../Button'
+import {Button, Tag} from '../../index'
 import './productCard.scss'
-import product from '../../../assets/images/rachel-cheng-NEQHUeM72c0-unsplash.jpg' ;
+import {images} from '../../../assets/images/index'
 
 // {img, title, description, price}
 
-function ProductCard() {
+function ProductCard({title, description, price, img, tag }) {
+  console.log('product card:', title)
+
   return (
-    <div className='product'>
-        <img src={product} alt='shampoo bottle'></img>
-        <h3>Title</h3>
-        <p>description</p>
-        <p>price</p>
-        <Button text='Add to cart' />
-    </div>
+    <article className='product' key={1}>
+        { tag ? <Tag text={tag.text} theme={tag.theme} /> : ''}
+        <img src={images.product1} alt='shampoo bottle' className='product-img'></img>
+        <h3>{title}</h3>
+        <p>{description}</p>
+        <p className='price'>${price}</p>
+        <Button text='Add to cart' icon={true} />
+    </article>
   )
 }
 

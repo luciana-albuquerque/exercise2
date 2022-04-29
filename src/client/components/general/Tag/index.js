@@ -3,7 +3,7 @@ import './tag.scss'
 
 function Tag({text, theme}) {
   return (
-    <div className="new">{text}</div>
+    <div className={`tag ${theme}`}>{text}</div>
   )
 }
 

@@ -8,41 +8,71 @@
     height: 100vh;
     width: 100vw;
 
-    .image {
-        background-image: url('../../../assets/images/neauthy-skincare-M8Vl5jWSV9s-unsplash.jpg');
-        background-size: cover;
+    .image-container {
         height: 100vh;
         width: 50vw;
-    }
 
-    .right {
-        order: 1;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
     }
 
     .content {
         @include s.flexCenter(column);
+        
         justify-content: center;
         width: 50vw;
         height: 100%;
-        background-color: $primaryColor;
+
     }
 
-    .article {
+    .clean {
+        background-color: #547665;
+        order: -1;
 
-        h1 {
-            font-size: 2.3rem;
-            color: white;
-        }
-        p {
-            color: white;
-        }
-        button {
-            border-color: white;
-            color: white;
-            &:hover {
-                color: $primaryColor;
-                background-color: white;
+        .article {
+            h1 {
+                font-size: 2.3rem;
+                color: white;
+            }
+            p {
+                color: white;
+            }
+            button {
+                border-color: white;
+                color: white;
+                &:hover {
+                    color: #547665;
+                    background-color: white;
+                }
             }
         }
     }
+
+    .natural {
+        background-color: #C6B9B6;
+
+        .article {
+            h1 {
+                font-size: 2.3rem;
+                color: white;
+            }
+            p {
+                color: $secondaryColor;
+            }
+            button {
+                border-color: $thirdColor;
+                color: $secondaryColor;
+                &:hover {
+                    color: white;
+                    background-color: $thirdColor;
+                }
+            }
+        }
+    }
+    
+
+    
 }

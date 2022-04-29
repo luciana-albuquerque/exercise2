@@ -1,25 +1,25 @@
-import "./landingPage.scss";
 import React from "react";
-import Tag from "../../general/Tag/Tag";
-import Article from "../../general/Article";
-import Catalogue from "../../general/Catalogue";
-import Campaign from "../../general/Campaign";
-import Banner from "../../general/Banner";
+import { Article, Banner, Catalogue, Campaign, Ingredients, Newsletter, Tag } from '../../index';
 import { campaignClean, campaignNatural, articleHome } from "../../../utils/const";
+import { images } from '../../../assets/images/index'
+import "./landingPage.scss";
 
 function LandingPage() {
+  console.log (images)
   return (
     <div className="landingPage">
-      <div className="home">
-        <Tag text="New!" />
+      <section className="home">
+        <Tag text="New!" theme='white'/>
         <Article {...articleHome} />
-      </div>
+      </section>
       <Banner />
+      <Catalogue img={images.product1}/>
+      <Campaign {...campaignClean} img={images.natural}/>
       <Catalogue />
-      <Campaign {...campaignClean} right={true} />
+      <Campaign {...campaignNatural}/>
       <Catalogue />
-      <Campaign {...campaignNatural} right={false}/>
-      <Catalogue />
+      <Ingredients />
+      <Newsletter />
     </div>
   );
 }

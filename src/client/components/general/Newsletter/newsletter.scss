@@ -1,0 +1,8 @@
+@use '/src/client/assets/styles/styles' as s;
+@import '../../../assets/styles/variables';
+
+.newsletter {
+    @include s.flexCenter(row);
+    justify-content: space-around;
+    width: 100vw;
+}

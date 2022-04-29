@@ -12,13 +12,27 @@
       -ms-flex-align: start;
           align-items: flex-start;
   margin: 10px;
+  position: relative;
 }
 
-.product img {
-  width: 200px;
+.product .price {
+  margin: 6px 0;
+}
+
+.product .product-img {
+  width: 250px;
+  height: 346px;
 }
 
 .product button {
   width: 100%;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.product .tag {
+  position: absolute;
+  top: 15px;
+  left: 15px;
 }
 /*# sourceMappingURL=productCard.css.map */

@@ -1,9 +1,13 @@
 import React from 'react'
 import './button.scss'
+import cart from '../../../assets/images/shopping-cart.png'
 
-function Button({text}) {
+function Button({text, icon}) {
   return (
-    <button>{text}</button>
+    <button>
+    { icon ? <img src={cart} alt='cart' className='icon'></img> : ''}
+    {text}
+    </button>
     )
 }
 
