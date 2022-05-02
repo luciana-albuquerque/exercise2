@@ -5,7 +5,7 @@ function Banner() {
 
   return (
     <div className='banner'>
-        <h2>Solutions for all skin</h2>
+        <h3>Solutions for all skin</h3>
         <p>Explore our innovative skincare products</p>
     </div>
   )

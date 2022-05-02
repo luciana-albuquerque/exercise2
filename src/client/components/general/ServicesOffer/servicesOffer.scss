@@ -1,0 +1,12 @@
+@use '/src/client/assets/styles/styles' as s;
+@import '../../../assets/styles/variables';
+
+.servicesOffer {
+    @include s.flexCenter(row);
+
+    height: 235px;
+    width: 100vw;
+    padding: 100px;
+    justify-content: space-around;
+    background-color: $backgroundColor;
+}

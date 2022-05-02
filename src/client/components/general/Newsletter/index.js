@@ -1,17 +1,20 @@
 import React from 'react'
 import './newsletter.scss'
+import Button from '../Button'
 
 function index() {
   return (
-    <div className='newsletter'>
+    <section className='newsletter'>
+      <div className='content'>
         <h2>Join the Sooth family</h2>
         <hr/>
-        <p>lorem ipsum  </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. </p>
+        </div>
         <form>
             <input type='email'></input>
-            <button>Subscribe</button>
+            <Button text='Subscribe'/>
         </form>
-    </div>
+    </section>
   )
 }
 

@@ -9,18 +9,20 @@
     position: relative;
 
     .price {
-        margin: 6px 0;
+        margin: 8px 0;
     }
 
     .product-img {
         width: 250px;
         height: 346px;
+        margin-bottom: 15px;
     }
 
     button {
         width: 100%;
         font-weight: 400;
         font-size: 1rem;
+        padding: auto;
     }
 
     .tag {

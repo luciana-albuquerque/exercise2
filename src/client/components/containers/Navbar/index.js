@@ -10,7 +10,7 @@ function Navbar() {
         <a href='about'>CONSULTATION</a>
       </div>
       <div className="shop">
-        <h3>sooth</h3>
+        <h2>sooth</h2>
         <ul>
           <li><a href='about'>Acne</a></li>
           <li><a href='about'>Sun</a></li>

@@ -3,7 +3,6 @@ import './campaign.scss'
 import Article from '../Article';
 
 function Campaign( { theme, article, image} ) {
-  console.log('img', image)
 
   return (
     <section className='campaign'>

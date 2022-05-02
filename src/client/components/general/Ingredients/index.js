@@ -1,15 +1,20 @@
 import React from 'react';
 import './ingredients.scss'
+import {ingredients} from '../../../utils/const'
+import IngredientCard from '../IngredientCard'
 
 function index() {
+
   return (
-    <div className='ingredients'>
+    <section className='ingredientList'>
         <h3>We use the best</h3>
         <p>Explore our innovative skincare products</p>
-        <div className='items'>
-            some cards of ingredients
+        <div className='list'>
+            {ingredients.map((item, index) => 
+              <IngredientCard {...item} index={index} />
+            )}
         </div>
-    </div>
+    </section>
   )
 }
 

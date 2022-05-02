@@ -20,6 +20,7 @@ button {
     &:hover {
         color: white;
         background-color: $primaryColor;
+        cursor: pointer;
 
         .icon {
             filter: invert(1);

@@ -1,0 +1,18 @@
+@use '/src/client/assets/styles/styles' as s;
+@import '../../../assets/styles/variables';
+
+.ingredient {
+    @include s.flexCenter(column);
+    padding: 20px;
+
+    h4 {
+        font-size: 1.15rem;
+        text-transform: capitalize;
+    }
+
+    img {
+        width: 270px;
+        height: 270px;
+        margin: 5px 0;
+    }
+}

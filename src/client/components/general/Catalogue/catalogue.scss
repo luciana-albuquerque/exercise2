@@ -5,26 +5,40 @@
     @include s.flexCenter(row);
 
     justify-content: center;
-    height: 120vh;
+    height: fit-content;
+    padding: 50px 0;
     width: 100vw;
+    background-color: $backgroundColor;
 
     section {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: stretch;
-    }
+        width: fit-content;
+        margin: 50px 0px;
 
-    .menu {
-        @include s.flexCenter(row);
-        justify-content: space-between;
-        padding: 10px;
-        font-weight: 800;
-        font-size: 1.1rem;
+        .menu {
+            @include s.flexCenter(row);
+            justify-content: space-between;
+            padding: 10px;
+            font-weight: 800;
+            
+            a {
+                font-size: 1.1rem;
+            }
+        }
+        .products {
+            @include s.flexCenter(row);
+        
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            max-width: 1080px;
+            row-gap: 40px;
+        }
     }
 }
 
-.products {
-    @include s.flexCenter(row);
-
+.beigeTheme {
+    background-color: $secondBackgroundColor;
 }
