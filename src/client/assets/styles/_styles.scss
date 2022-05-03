@@ -1,0 +1,57 @@
+@import './variables';
+
+
+@mixin flexCenter($direction) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1000px) {
+      @content;
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width: 600px) {
+      @content;
+    }
+}
+
+* {
+    font-family: $font-family;
+    color: $primaryColor;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 3.6rem;
+}
+
+h2 {
+    font-size: 2.6rem;
+}
+
+h3 {
+    font-size: 2.3rem;
+}
+
+h5 {
+    font-size: 1.15rem;
+}
+
+h6 {
+    font-size: 1.1rem;
+}

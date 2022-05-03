@@ -1,0 +1,17 @@
+@use '/src/client/assets/styles/styles' as s;
+@import '../../../assets/styles/variables';
+
+.banner {
+    @include s.flexCenter(column);
+
+    border: 2px solid $primaryColor;
+    background-color: $backgroundColor;
+    justify-content: center;
+    width: 100vw;
+    height: 140px;
+
+    p {
+        font-size: 1.15rem;
+        margin: 5px;
+    }
+}

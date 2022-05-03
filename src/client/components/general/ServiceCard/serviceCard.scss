@@ -1,0 +1,24 @@
+@use '/src/client/assets/styles/styles' as s;
+@import '../../../assets/styles/variables';
+
+.service {
+    @include s.flexCenter(column);
+    height: 120px;
+    width: 150px;
+    justify-content: space-between;
+
+    img {
+        width: 27px;
+    }
+
+    p {
+        text-align: center;
+        font-size: 1.15rem;
+        color: $primaryColor;
+    }
+
+    a {
+        text-decoration: underline;
+        color: $primaryColor;
+    }
+}

@@ -1,0 +1,30 @@
+@use '/src/client/assets/styles/styles' as s;
+@import '../../../assets/styles/variables';
+
+.ingredientList {
+    @include s.flexCenter(column);
+    justify-content: center;
+    width: 100vw;
+    background-color: $secondBackgroundColor;
+    padding: 5% 0 10% 0;
+
+    p {
+        font-size: 1.15rem;
+        margin: 5px;
+    }
+
+    .list {
+        @include s.flexCenter(row);
+        flex-wrap: wrap;
+        max-width: 990px;
+        width: fit-content;
+        justify-content: flex-start;
+        margin: 20px;
+
+        @include s.mobile {
+            @include s.flexCenter(column);
+            justify-content: center;
+        }
+    } 
+
+}
