@@ -7,7 +7,7 @@ import "./landingPage.scss";
 function LandingPage() {
   
   return (
-    <div className="landingPage">
+    <main className="landingPage">
       <Alert />
       <section className="home">
         <Tag text="New!" theme='white'/>
@@ -22,7 +22,7 @@ function LandingPage() {
       <Ingredients />
       <ServicesOffer />
       <Newsletter />
-    </div>
+    </main>
   );
 }
 

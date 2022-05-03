@@ -3,6 +3,7 @@ import "./footer.scss";
 import Button from "../../general/Button";
 
 function Footer() {
+  
   return (
     <footer>
       <div className="main">
@@ -15,8 +16,8 @@ function Footer() {
           </form>
         </div>
 
-        <div className="siteMap">
-          <div className="section">
+        <nav className="siteMap">
+          <section className="section">
             <h5>SHOP</h5>
             <ul>
               <li>Lorem</li>
@@ -24,9 +25,9 @@ function Footer() {
               <li>Lorem</li>
               <li>Lorem</li>
             </ul>
-          </div>
+          </section>
 
-          <div className="section">
+          <section className="section">
             <h5>ABOUT</h5>
             <ul>
               <li>Lorem</li>
@@ -34,9 +35,9 @@ function Footer() {
               <li>Lorem</li>
               <li>Lorem</li>
             </ul>
-          </div>
+          </section>
 
-          <div className="section">
+          <section className="section">
             <h5>MORE</h5>
             <ul>
               <li>Lorem</li>
@@ -44,12 +45,11 @@ function Footer() {
               <li>Lorem</li>
               <li>Lorem</li>
             </ul>
-          </div>
-        </div>
+          </section>
+        </nav>
       </div>
 
       <div className="policies">
-        <hr />
         <div className="links">
           <p>SOOTH ALL RIGHTS RESERVED</p>
           <ul>

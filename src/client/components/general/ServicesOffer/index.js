@@ -3,7 +3,7 @@ import './servicesOffer.scss'
 import ServiceCard from '../ServiceCard'
 import { services } from '../../../utils/const'
 
-function index() {
+export default function ServicesOffer() {
   return (
     <section className='servicesOffer'>
       {services.map((item, index) => 
@@ -12,5 +12,3 @@ function index() {
     </section>
   )
 }
-
-export default index

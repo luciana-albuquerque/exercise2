@@ -4,20 +4,25 @@ import ProductCard from '../ProductCard';
 import products from '../../../utils/products'
 
 function Catalogue({category, beigeTheme }) {
-  console.log(beigeTheme)
+  const filteredByCategory = products.filter(product => product.category === category.toString());
 
   return (
     <div className={ `catalogue ${ beigeTheme ? "beigeTheme" : ""}` }>
         <section>
-        <div className='menu'>
-            <a>{category}</a>
-            <a>Shop all products</a>
-        </div>
-        <div className='products'>
-        {products.filter(product => product.category === category.toString()).map((filtered, index) => { return (
-          <ProductCard {...filtered} index={index} />
-        )})}
-        </div>
+
+          <div className='menu'>
+              <a href="#">{category}</a>
+              <a href="#">Shop all products</a>
+          </div>
+
+          <div className='products'>
+          {filteredByCategory.map((filtered, index) => { return (
+            <React.Fragment key={index}>
+            <ProductCard {...filtered} />
+            </React.Fragment>
+          )})}
+          </div>
+
         </section>
     </div>
   )

@@ -1,14 +1,13 @@
 import React from 'react'
 import './serviceCard.scss'
 
-function index({ img, description, link, index }) {
+export default function ServiceCard({ img, description, link, alt, index }) {
+
   return (
     <div className='service' key={index}>
-        <img src={img} alt='services offer'></img>
+        <img src={img} alt={alt}></img>
         <p>{description}</p>
         <a href='#'>{link}</a>
     </div>
   )
 }
-
-export default index

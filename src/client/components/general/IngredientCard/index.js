@@ -1,15 +1,13 @@
 import React from 'react';
 import './ingredientCard.scss'
 
-function index({ name, img, description, index }) {
+export default function IngredientCard({ name, img, description, alt, index }) {
 
   return (
     <article className='ingredient' key={index}>
-        <img src={img} alt='ingredient'></img>
+        <img src={img} alt={alt}></img>
         <h4>{name}</h4>
         <p>{description}</p>
     </article>
   )
 }
-
-export default index
