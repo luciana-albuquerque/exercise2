@@ -35,6 +35,10 @@
             justify-content: flex-start;
             max-width: 1080px;
             row-gap: 40px;
+
+            @include s.mobile {
+                @include s.flexCenter(column);
+            }
         }
     }
 }

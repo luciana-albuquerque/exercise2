@@ -73,6 +73,16 @@
         }
     }
     
+    @include s.mobile {
+        @include s.flexCenter(column);
 
+        .image-container {
+            height: 50vh;
+            width: 100vw;
+        }
+        .content {
+            width: 100vw;
+        }
+    }
     
 }

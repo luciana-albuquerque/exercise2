@@ -13,4 +13,12 @@
         margin: 15px 0;
         line-height: 20px;
     }
+
+    @include s.mobile {
+        width: 75%;
+
+        h1 {
+            font-size: 2.3rem;
+        }
+      }
 }

@@ -31,11 +31,31 @@ footer {
                 li {
                     margin-top: 8px;
                 }
+
+                @include s.mobile {
+                    @include s.flexCenter(row);
+                    justify-content: space-around;
+                    width: 100%;
+                }
             }
+
+            @include s.mobile {
+                @include s.flexCenter(column);
+            }
+
+        }
+
+        @include s.mobile {
+            @include s.flexCenter(column);
+            height: fit-content;
+            margin-bottom: 30px;
         }
 
     }
-    
+
+    @include s.mobile {
+        padding: 53px 0;
+    }
     
 }
 
@@ -74,6 +94,15 @@ footer {
                 border: 1px solid white;
                 color: $primaryColor;
             }
+
+            @include s.mobile {
+                width: 100%;
+            }
+        }
+
+        @include s.mobile {
+            @include s.flexCenter(column);
+            margin: 50px 0;
         }
     }
 }
@@ -106,5 +135,10 @@ footer {
         li {
             padding-right: 10px;
         } 
+
+        @include s.mobile {
+            width: 100%;
+        }
+
     }
 }

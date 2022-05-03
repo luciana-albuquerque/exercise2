@@ -20,5 +20,11 @@
         width: fit-content;
         justify-content: flex-start;
         margin: 20px;
+
+        @include s.mobile {
+            @include s.flexCenter(column);
+            justify-content: center;
+        }
     } 
+
 }

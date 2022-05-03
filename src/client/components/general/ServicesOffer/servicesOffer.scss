@@ -9,4 +9,10 @@
     padding: 100px;
     justify-content: space-around;
     background-color: $backgroundColor;
+
+    @include s.mobile {
+        @include s.flexCenter(column);
+        height: fit-content;
+        row-gap: 30px;
+    }
 }

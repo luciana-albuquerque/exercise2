@@ -1,11 +1,22 @@
-import React from 'react'
+import { useState } from 'react'
 import './navbar.scss'
 import lupa from '../../../assets/images/lupa.png'
+import { GiHamburgerMenu } from 'react-icons/gi'
+import { GrClose } from 'react-icons/gr'
 
 function Navbar() {
+  const [openMenu, setOpenMenu] = useState(false);
+  const handleClick = () => setOpenMenu(!openMenu)
+  const closeMenu = ()  => setOpenMenu(false)
+
   return (
     <div className="navbar">
-      <div className="about">
+      <div className='hamburguer' onClick={handleClick}>
+        {openMenu ?  <GrClose size={20} style={{color: '$primaryColor'}}/>
+                    : <GiHamburgerMenu size={20} style={{color: '$primaryColor'}}/> }
+        <a href='about'>LOGIN</a>
+      </div>
+      <div className={ openMenu ? 'about active' : 'about'}>
         <a href='about'>ABOUT</a>
         <a href='about'>CONSULTATION</a>
       </div>
@@ -19,8 +30,8 @@ function Navbar() {
           <li><a href='about'>Vitiligio</a></li>
         </ul>
       </div>
-      <div className="account">
-        <img src={lupa}></img>
+      <div className={ openMenu ? 'account active' : 'account'}>
+        <img src={lupa} alt='search'></img>
         <a href='about'>CART</a>
         <a href='about'>LOGIN</a>
       </div>

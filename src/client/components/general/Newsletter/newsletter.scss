@@ -26,6 +26,15 @@
         hr {
             height: 90%;
             margin: 20px;
+
+            @include s.mobile {
+                width: 100%
+            }
+        }
+
+        @include s.mobile {
+            @include s.flexCenter(column);
+            height: fit-content;
         }
     }
 
@@ -42,6 +51,7 @@
             outline: none;
             background: #fff; 
             color: #a2a5a7;
+
         }
 
         button {
@@ -55,6 +65,19 @@
                 border: 1px solid #835626;
                 color: white;
             }
+            @include s.mobile {
+                width: 100%;
+            }
         }
+
+        @include s.mobile {
+            @include s.flexCenter(column);
+        }
+    }
+
+    @include s.mobile {
+        @include s.flexCenter(column);
+        height: fit-content;
+        row-gap: 30px;
     }
 }

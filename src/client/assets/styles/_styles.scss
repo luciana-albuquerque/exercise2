@@ -7,6 +7,18 @@
     align-items: center;
 }
 
+@mixin tablet {
+    @media screen and (max-width: 1000px) {
+      @content;
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width: 600px) {
+      @content;
+    }
+}
+
 * {
     font-family: $font-family;
     color: $primaryColor;

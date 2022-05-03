@@ -17,6 +17,20 @@
         margin: 15px;
         font-weight: 700;
     }
+
+    .hamburguer {
+        display: none;
+
+        @include s.mobile {
+            @include s.flexCenter(row);
+            justify-content: space-between;
+            width: 90%;
+        }
+    }
+
+    @include s.mobile {
+        @include s.flexCenter(column);
+      }
 }
 
 .shop {
@@ -44,6 +58,22 @@
     }
 }
 
+.about {
+    @include s.flexCenter(row);
+
+    img {
+        width: 15px;
+        margin: 0 15px;
+    }
+
+    @include s.mobile {
+        @include s.flexCenter(column);
+        position: fixed;
+        left: -100%;
+        width: 50%;
+      }
+}
+
 .account {
     @include s.flexCenter(row);
 
@@ -51,4 +81,17 @@
         width: 15px;
         margin: 0 15px;
     }
+
+    @include s.mobile {
+        @include s.flexCenter(column);
+        position: fixed;
+        left: -100%;
+        top: 154px;
+        width: 50%;
+      }
+}
+
+.active {
+    left: 80px;
+    background-color: $secondBackgroundColor;
 }
