@@ -7,7 +7,9 @@ export default function ServicesOffer() {
   return (
     <section className='servicesOffer'>
       {services.map((item, index) => 
-        <ServiceCard {...item} index={index} />
+        <React.Fragment key={index}>
+          <ServiceCard {...item} />
+        </React.Fragment>
       )}
     </section>
   )

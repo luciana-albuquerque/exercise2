@@ -1,8 +1,9 @@
 import { useState } from "react";
 import "./navbar.scss";
-import lupa from "../../../assets/images/lupa.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GrClose } from "react-icons/gr";
+import Searchbar from "../../general/Searchbar";
+import Cart from "../../general/Cart";
 
 function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -43,8 +44,9 @@ function Navbar() {
         </ul>
       </div>
       <div className={openMenu ? "account active" : "account"}>
-        <img src={lupa} alt="search"></img>
-        <a href="#">CART</a>
+        <Searchbar />
+        <a href="#">CART</a> 
+        <Cart />
         <a href="#">LOGIN</a>
       </div>
     </nav>

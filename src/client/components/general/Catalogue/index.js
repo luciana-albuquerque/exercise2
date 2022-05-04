@@ -1,26 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './catalogue.scss';
 import ProductCard from '../ProductCard';
-import products from '../../../utils/products'
 
-function Catalogue({category, beigeTheme }) {
-  const filteredByCategory = products.filter(product => product.category === category.toString());
+function Catalogue({ratingName, ratingList, beigeTheme }) {
+  const [cartList, setCartList] = useState([])
+  
+  localStorage.setItem('cart', JSON.stringify(cartList));
+  const xxx = JSON.parse(localStorage.getItem('cart'));
+  /* console.log('cart local storage in catalogue',xxx) */
+
+  const addToCart = (productId) => {
+    const updatedList = [...cartList, productId]
+    setCartList(updatedList);
+  }
 
   return (
     <div className={ `catalogue ${ beigeTheme ? "beigeTheme" : ""}` }>
         <section>
 
           <div className='menu'>
-              <a href="#">{category}</a>
+              <a href="#">{ratingName}</a>
               <a href="#">Shop all products</a>
           </div>
 
           <div className='products'>
-          {filteredByCategory.map((filtered, index) => { return (
-            <React.Fragment key={index}>
-            <ProductCard {...filtered} />
-            </React.Fragment>
-          )})}
+          {ratingList.map((filtered) => { return (
+              <ProductCard {...filtered}  key={filtered.id} add={addToCart}/>       
+              )})}
           </div>
 
         </section>

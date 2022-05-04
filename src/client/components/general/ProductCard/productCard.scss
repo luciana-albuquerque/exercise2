@@ -5,17 +5,35 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: space-between;
     margin: 10px;
     position: relative;
+    width: 250px;
+    height: 530px;
+
+    p, h6 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 
     .price {
         margin: 8px 0;
     }
 
     .product-img {
+        @include s.flexCenter(row);
+        justify-content: center;
         width: 250px;
         height: 346px;
         margin-bottom: 15px;
+        background-color: white;
+
+        img {
+            width: 80%;
+        }
     }
 
     button {
@@ -23,6 +41,7 @@
         font-weight: 400;
         font-size: 1rem;
         padding: auto;
+        align-self: flex-end;
     }
 
     .tag {

@@ -28,9 +28,10 @@
                 font-size: 1.1rem;
             }
         }
+
         .products {
-            @include s.flexCenter(row);
-        
+            display: flex;
+            align-items: flex-start;    
             flex-wrap: wrap;
             justify-content: flex-start;
             max-width: 1080px;
