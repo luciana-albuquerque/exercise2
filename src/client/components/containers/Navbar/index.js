@@ -48,7 +48,7 @@ function Navbar() {
       </div>
       <div className={openMenu ? "account active" : "account"}>
         <Searchbar />
-        <a href="#">CART</a> 
+        <a href="#">CART</a>
         <Cart quantity={quantity} />
         <a href="#">LOGIN</a>
       </div>

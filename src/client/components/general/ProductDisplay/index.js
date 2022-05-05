@@ -12,8 +12,8 @@ export default function ProductDisplay({ list }) {
         <div className="item" key={item.id}>
           <img src={item.image} alt={item.category} className="product-img" />
           <div className="info">
-          <h6>{item.title}</h6>
-          <p>{item.description}</p>
+            <h6>{item.title}</h6>
+            <p>{item.description}</p>
           </div>
         </div>
       ))}

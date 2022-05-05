@@ -15,11 +15,11 @@
         @include s.flexCenter(row);
         justify-content: space-between;
         margin: 5px;
-        height: fit-content;
+        height: 125px;
         width: 80%;
         background: white;
         border: 1px solid #BACAD1;
-        padding: 15px 0;
+        padding: 0 0;
 
         img {
             height: auto;
