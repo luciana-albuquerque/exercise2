@@ -1,19 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import './catalogue.scss';
 import ProductCard from '../ProductCard';
+import CartContext from '../../../context/CartContext';
 
 function Catalogue({ratingName, ratingList, beigeTheme }) {
-  const [cartList, setCartList] = useState([])
-  
-  localStorage.setItem('cart', JSON.stringify(cartList));
-  const xxx = JSON.parse(localStorage.getItem('cart'));
-  /* console.log('cart local storage in catalogue',xxx) */
+  const [cart, setCart] = useContext(CartContext)
 
   const addToCart = (productId) => {
-    const updatedList = [...cartList, productId]
-    setCartList(updatedList);
+    setCart(prev => ([...prev, productId]))
+    localStorage.setItem('cart', JSON.stringify([...cart, productId])) 
   }
 
+  //se deixar isso, ele zera o cart quando a pagina faz refresh. Se apagar, ele ignora o primeiro item adicionado.
+/*   useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart))
+  }, [cart, cart.length])  */
+  
   return (
     <div className={ `catalogue ${ beigeTheme ? "beigeTheme" : ""}` }>
         <section>

@@ -23,11 +23,13 @@ export default function Searchbar() {
     <div className="search">
       <div className="search-icon">
         {!openSearch ? (
+          <div>
           <FaSearch
             size={12}
             style={{ color: "$primaryColor" }}
             onClick={handleClick}
           />
+          </div>
         ) : (
           <div>
             <input type="text" value={query} onChange={handleSearch}></input>

@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "./navbar.scss";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GrClose } from "react-icons/gr";
 import Searchbar from "../../general/Searchbar";
 import Cart from "../../general/Cart";
+import CartContext from "../../../context/CartContext";
 
 function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
   const handleClick = () => setOpenMenu(!openMenu);
+  const [cart] = useContext(CartContext);
+  const quantity = cart?.length;
 
   return (
     <nav className="navbar">
@@ -46,7 +49,7 @@ function Navbar() {
       <div className={openMenu ? "account active" : "account"}>
         <Searchbar />
         <a href="#">CART</a> 
-        <Cart />
+        <Cart quantity={quantity} />
         <a href="#">LOGIN</a>
       </div>
     </nav>

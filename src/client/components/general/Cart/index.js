@@ -1,32 +1,24 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useContext } from 'react';
+import CartContext from '../../../context/CartContext';
 import ProductDisplay from '../ProductDisplay';
 import './Cart.scss'
 
 export default function Cart() {
-    const [cart, setCart] = useState([])
-    const [showCart, setShowCart] = useState(false)
+  const [cart, setCart] = useContext(CartContext)
+  const [showCart, setShowCart] = useState(false)
+  const handleCart = () => setShowCart(!showCart)
+  const allProducts = JSON.parse(localStorage.getItem('products'));
 
-    const cartLocalStorage = JSON.parse(localStorage.getItem('cart'));
-    const handleCart = () => setShowCart(!showCart)
-    console.log('cart on cart', cartLocalStorage)
-
-  useEffect(() => {
-    setCart(cartLocalStorage)
-  }, [cart])
-
- const allProducts = JSON.parse(localStorage.getItem('products'));
- const list = allProducts.map(item => item.id);
-  /*  const list = allProducts.map(item => {
-    if (item.id === (cartLocalStorage.map(id => id))) {
-      return product;
-  }
-  }) */
-    console.log(list)  
-
+  const list = allProducts.filter((item) => {
+    return cart.some((idsOnCart) => {
+      return idsOnCart === item.id;
+    })
+  }) 
+  
   return (
     <div className='cart'>
-        { cart.length !== 0 && <div className='quantity' onClick={handleCart}><p>{cart.length}</p></div>}
-        { showCart && <ProductDisplay list={list} /> }
+      { cart?.length !== 0 && <div className='quantity' onClick={handleCart}><p>{cart?.length}</p></div>}
+      { showCart && <ProductDisplay list={list} /> }
     </div>
   )
 }

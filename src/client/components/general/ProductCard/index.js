@@ -17,9 +17,7 @@ function ProductCard({ id, title, description, price, image, category, add}) {
       <h6>{title}</h6>
       <p>{description}</p>
       <p className="price">${price}</p>  
-      <div onClick={() => add(id) }>
-      <Button text="Add to cart" icon={true} />
-      </div>
+      <Button text="Add to cart" icon={true} onClick={() => add(id)} />
     </article>
   );
 }
