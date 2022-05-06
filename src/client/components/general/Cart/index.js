@@ -17,6 +17,7 @@ export default function Cart() {
 
   return (
     <div className="cart">
+      <a href="#">CART</a>
       {cart?.length !== 0 && (
         <div className="quantity" onClick={handleCart}>
           <p>{cart?.length}</p>

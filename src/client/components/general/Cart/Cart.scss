@@ -2,6 +2,7 @@
 @import '../../../assets/styles/variables';
 
 .cart {
+    @include s.flexCenter(row);
 
     .quantity {
         @include s.flexCenter(row);
@@ -15,5 +16,10 @@
         p {
             color: white;
         }
+    }
+
+    .productDisplay {
+        top: 50px;
+        right: 25px;
     }
 }

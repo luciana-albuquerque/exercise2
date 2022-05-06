@@ -2,21 +2,21 @@ import React from "react";
 import { Button, Tag } from "../../index";
 import "./productCard.scss";
 
-function ProductCard({ id, title, description, price, image, category, add}) {
-  
+function ProductCard({ id, title, description, price, image, category, add }) {
   return (
     <article className="product">
-      {category === "jewelery" ? (
-        <Tag text="New!" theme="blue" />
-      ) : title.includes("Women") ? (
-        <Tag text="15% off" theme="beige" />
-      ) : "" }
+      {(category === "jewelery" || title.includes("Women")) && (
+        <Tag
+          text={category === "jewelery" ? "New!" : "15% off"}
+          theme={category === "jewelery" ? "blue" : "beige"}
+        />
+      )}
       <div className="product-img">
-        <img src={image} alt={category}  />
+        <img src={image} alt={category} />
       </div>
       <h6>{title}</h6>
       <p>{description}</p>
-      <p className="price">${price}</p>  
+      <p className="price">${price}</p>
       <Button text="Add to cart" icon={true} onClick={() => add(id)} />
     </article>
   );
