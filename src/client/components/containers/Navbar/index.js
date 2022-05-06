@@ -1,5 +1,8 @@
 import { useState, useContext } from "react";
 import AuthContext from "../../../context/AuthContext";
+import CartContext from "../../../context/CartContext";
+import Searchbar from "../../general/Searchbar";
+import Cart from "../../general/Cart";
 import "./navbar.scss";
 import { signOut } from "firebase/auth";
 import { auth } from "../../../../firebase-config";
@@ -14,11 +17,12 @@ function Navbar() {
   const [user] = useContext(AuthContext);
   const [openMenu, setOpenMenu] = useState(false);
   const handleClick = () => setOpenMenu(!openMenu);
-  console.log(user)
 
   const logout = async () => {
     await signOut(auth);
   };
+  const [cart] = useContext(CartContext);
+  const quantity = cart?.length;
 
   return (
     <nav className="navbar">
@@ -56,7 +60,8 @@ function Navbar() {
       </div>
       <div className={openMenu ? "account active" : "account"}>
         <img src={lupa} alt="search"></img>
-        <a href="#">CART</a>
+        <Searchbar />
+        <Cart quantity={quantity} />
         { user?.email ? <a onClick={logout}>LOGOUT</a> : <a href="/login">LOGIN</a>  }
         <p>{user?.email}</p>
       </div>

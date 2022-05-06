@@ -1,0 +1,27 @@
+@use '/src/client/assets/styles/styles' as s;
+@import '../../../assets/styles/variables';
+
+.search {
+    position: relative;
+    
+    .search-icon {
+        margin-right: 15px;
+    }
+
+    input {
+        height: 40px;
+        font-size: 1em;
+        line-height: 45px;
+        padding-left: 10px;
+        border: 2px solid $thirdColor;
+        width: 300px;
+        outline: none;
+        background: #fff; 
+        color: #a2a5a7;
+        margin-right: 12px;
+        position: absolute;
+        z-index: 15;
+        top: -15px;
+        right: 28px;
+    }
+}

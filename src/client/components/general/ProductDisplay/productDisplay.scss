@@ -1,0 +1,47 @@
+@use '/src/client/assets/styles/styles' as s;
+@import '../../../assets/styles/variables';
+
+.productDisplay {
+    @include s.flexCenter(column);
+    background-color: $backgroundColor;
+    row-gap: 12px;
+    width: 30vw;
+    position: absolute;
+    right: 0;
+    margin: 15px 0;
+    padding: 30px 0;
+
+    .item {
+        @include s.flexCenter(row);
+        justify-content: space-between;
+        margin: 5px;
+        height: 125px;
+        width: 80%;
+        background: white;
+        border: 1px solid #BACAD1;
+        padding: 0 0;
+
+        img {
+            max-height: 90%;
+            width: 25%;
+        }
+
+        .info {
+            @include s.flexCenter(column);
+            justify-content: center;
+            width: 70%;
+            height: 100%;
+            border-left: 1px solid #BACAD1;
+            padding: 20px;
+
+            p, h6 {
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 100%;
+            }
+        }
+    }
+}

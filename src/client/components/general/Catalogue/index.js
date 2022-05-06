@@ -1,31 +1,34 @@
-import React from 'react'
-import './catalogue.scss';
-import ProductCard from '../ProductCard';
-import products from '../../../utils/products'
+import React, { useContext } from "react";
+import "./catalogue.scss";
+import ProductCard from "../ProductCard";
+import CartContext from "../../../context/CartContext";
 
-function Catalogue({category, beigeTheme }) {
-  const filteredByCategory = products.filter(product => product.category === category.toString());
+function Catalogue({ ratingName, ratingList, beigeTheme }) {
+  const [cart, setCart] = useContext(CartContext);
+
+  const addToCart = (productId) => {
+    setCart((prev) => [...prev, productId]);
+    localStorage.setItem("cart", JSON.stringify([...cart, productId]));
+  };
 
   return (
-    <div className={ `catalogue ${ beigeTheme ? "beigeTheme" : ""}` }>
-        <section>
+    <div className={`catalogue ${beigeTheme ? "beigeTheme" : ""}`}>
+      <section>
+        <div className="menu">
+          <a href="#">{ratingName}</a>
+          <a href="#">Shop all products</a>
+        </div>
 
-          <div className='menu'>
-              <a href="#">{category}</a>
-              <a href="#">Shop all products</a>
-          </div>
-
-          <div className='products'>
-          {filteredByCategory.map((filtered, index) => { return (
-            <React.Fragment key={index}>
-            <ProductCard {...filtered} />
-            </React.Fragment>
-          )})}
-          </div>
-
-        </section>
+        <div className="products">
+          {ratingList.map((filtered) => {
+            return (
+              <ProductCard {...filtered} key={filtered.id} add={addToCart} />
+            );
+          })}
+        </div>
+      </section>
     </div>
-  )
+  );
 }
 
-export default Catalogue
+export default Catalogue;
