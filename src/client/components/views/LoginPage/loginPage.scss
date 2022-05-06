@@ -1,0 +1,10 @@
+@use '/src/client/assets/styles/styles' as s;
+@import '../../../assets/styles/variables';
+
+.loginPage {
+    @include s.flexCenter(column);
+    justify-content: center;
+    height: 80vh;
+    width: 100vw;
+    row-gap: 15px;
+}

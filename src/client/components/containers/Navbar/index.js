@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import AuthContext from "../../../context/AuthContext";
 import "./navbar.scss";
+
+//Images
 import lupa from "../../../assets/images/lupa.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GrClose } from "react-icons/gr";
 
+
 function Navbar() {
+  const [user] = useContext(AuthContext);
   const [openMenu, setOpenMenu] = useState(false);
   const handleClick = () => setOpenMenu(!openMenu);
 
@@ -46,6 +51,7 @@ function Navbar() {
         <img src={lupa} alt="search"></img>
         <a href="#">CART</a>
         <a href="#">LOGIN</a>
+        <p>{user?.email}</p>
       </div>
     </nav>
   );
