@@ -11,7 +11,9 @@ export default function Ingredient() {
       <p>Explore our innovative skincare products</p>
       <div className="list">
         {ingredients.map((item, index) => (
-          <IngredientCard {...item} index={index} />
+          <React.Fragment key={index}>
+            <IngredientCard {...item} />
+          </React.Fragment>
         ))}
       </div>
     </section>

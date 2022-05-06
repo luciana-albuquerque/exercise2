@@ -1,0 +1,25 @@
+@use '/src/client/assets/styles/styles' as s;
+@import '../../../assets/styles/variables';
+
+.cart {
+    @include s.flexCenter(row);
+
+    .quantity {
+        @include s.flexCenter(row);
+        justify-content: center;
+        border: 0px solid $primaryColor;
+        border-radius: 50%;
+        background-color: $primaryColor;
+        width: 20px;
+        height: 20px; 
+
+        p {
+            color: white;
+        }
+    }
+
+    .productDisplay {
+        top: 50px;
+        right: 25px;
+    }
+}
