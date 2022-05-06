@@ -1,6 +1,8 @@
 import { useState, useContext } from "react";
 import AuthContext from "../../../context/AuthContext";
 import "./navbar.scss";
+import { signOut } from "firebase/auth";
+import { auth } from "../../../../firebase-config";
 
 //Images
 import lupa from "../../../assets/images/lupa.png";
@@ -12,6 +14,11 @@ function Navbar() {
   const [user] = useContext(AuthContext);
   const [openMenu, setOpenMenu] = useState(false);
   const handleClick = () => setOpenMenu(!openMenu);
+  console.log(user)
+
+  const logout = async () => {
+    await signOut(auth);
+  };
 
   return (
     <nav className="navbar">
@@ -50,7 +57,7 @@ function Navbar() {
       <div className={openMenu ? "account active" : "account"}>
         <img src={lupa} alt="search"></img>
         <a href="#">CART</a>
-        <a href="#">LOGIN</a>
+        { user?.email ? <a onClick={logout}>LOGOUT</a> : <a href="/login">LOGIN</a>  }
         <p>{user?.email}</p>
       </div>
     </nav>

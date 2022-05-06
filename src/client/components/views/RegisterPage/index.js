@@ -11,20 +11,21 @@ export default function RegisterPage() {
   const register = async () => {
     try {
       const user = await createUserWithEmailAndPassword(auth, email, password);
-      console.log(user)
     } catch (error) {
       console.log(error.message)
     }
   }
 
   return (
-    <div className="registerPage">
-      <h3>Register</h3>
-      <input placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
-      <input type='password' placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
-      <input type='password' placeholder="Confirm password" onChange={(e) => setConfirmPassword(e.target.value)}/>
-      <button onClick={register}>Create Account</button>
-      <p>Already have an account? <a>Sign in here.</a></p>
-    </div>
+    <main className="registerPage">
+      <div className='register'>
+        <h3>REGISTER</h3>
+        <input placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
+        <input type='password' placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
+        <input type='password' placeholder="Confirm password" onChange={(e) => setConfirmPassword(e.target.value)}/>
+        <button onClick={register}>Create Account</button>
+        <p>Already have an account? <a href='/login'>Sign in here.</a></p>
+      </div>
+    </main>
   );
 }

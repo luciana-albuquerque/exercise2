@@ -4,8 +4,8 @@ import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth } from "../../../../firebase-config";
 
 export default function LoginPage() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const login = async () => {
     try {
@@ -20,14 +20,21 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="loginPage">
-      <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
-      <input type='password'
-        placeholder="Password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={login}>Log In</button>
-      <button onClick={logout}>Log Out</button>
-    </div>
+    <main className="loginPage">
+      <div className="login">
+        <h3>LOGIN</h3>
+        <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+        <input
+          type="password"
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button onClick={login}>Log In</button>
+        <button onClick={logout}>Log Out</button>
+        <p>
+          Don't have an account? <a href="/register">Register now.</a>
+        </p>
+      </div>
+    </main>
   );
 }
