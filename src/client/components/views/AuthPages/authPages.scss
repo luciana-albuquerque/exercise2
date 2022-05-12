@@ -1,0 +1,57 @@
+@use '/src/client/assets/styles/styles' as s;
+@import '../../../assets/styles/variables';
+
+.authPages {
+    @include s.flexCenter(column);
+    justify-content: space-around;
+    height: 100vh;
+    width: 100vw;
+    background-color: #FAFAFA;
+
+    .content {
+        @include s.flexCenter(column);
+        justify-content: center;
+        width: 580px;
+        height: 470px;
+
+        margin-top: 15%;
+    }
+
+    .errorMessage {
+        color: red
+    }
+
+    h3 {
+        margin: 20px;
+    }
+
+    form {
+        @include s.flexCenter(column);
+        justify-content: center;
+        row-gap: 10px;
+    }
+
+    input {
+        height: 40px;
+        font-size: 1em;
+        line-height: 45px;
+        padding-left: 10px;
+        border: 1px solid #BACAD1;
+        width: 300px;
+        outline: none;
+        background: #fff; 
+        color: #a2a5a7;
+    }
+
+    button {
+        width: 100%;
+        background-color: $primaryColor;
+        color: white;
+        margin-top: 25px;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+}
