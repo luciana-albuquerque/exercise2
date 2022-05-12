@@ -10,7 +10,7 @@ export const addProduct = (productId) => {
 export const fecthProducts = () => {
     return async (dispatch, getState) => {
         const response = await axios.get('https://fakestoreapi.com/products')
-        console.log(response.data)
+
         dispatch({
             type: 'api/fecthProducts',
             payload: response.data
