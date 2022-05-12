@@ -1,14 +1,29 @@
 import { useState, useContext } from "react";
-import "./navbar.scss";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { GrClose } from "react-icons/gr";
+import UserContext from "../../../context/UserContext";
+import CartContext from "../../../context/CartContext";
 import Searchbar from "../../general/Searchbar";
 import Cart from "../../general/Cart";
-import CartContext from "../../../context/CartContext";
+import "./navbar.scss";
+import { signOut } from "firebase/auth";
+import { auth } from "../../../../firebase-config";
+import { useNavigate } from "react-router-dom";
+
+//Images
+import { GiHamburgerMenu } from "react-icons/gi";
+import { GrClose } from "react-icons/gr";
 
 function Navbar() {
+  const [user] = useContext(UserContext);
   const [openMenu, setOpenMenu] = useState(false);
   const handleClick = () => setOpenMenu(!openMenu);
+  let navigate = useNavigate();
+
+  const logout = async (e) => {
+    e.preventDefault();
+    localStorage.removeItem("user");
+    await signOut(auth);
+    navigate("/login");
+  };
   const [cart] = useContext(CartContext);
   const quantity = cart?.length;
 
@@ -49,7 +64,11 @@ function Navbar() {
       <div className={openMenu ? "account active" : "account"}>
         <Searchbar />
         <Cart quantity={quantity} />
-        <a href="#">LOGIN</a>
+        {user?.email ? (
+          <a onClick={logout}>LOGOUT</a>
+        ) : (
+          <a href="/login">LOGIN</a>
+        )}
       </div>
     </nav>
   );
