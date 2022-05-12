@@ -1,10 +1,12 @@
 import React, { useState, useContext } from "react";
-import CartContext from "../../../context/CartContext";
+/* import CartContext from "../../../context/CartContext"; */
+import { useSelector } from 'react-redux'
 import ProductDisplay from "../ProductDisplay";
 import "./Cart.scss";
 
 export default function Cart() {
-  const [cart] = useContext(CartContext);
+  /* const [cart] = useContext(CartContext); */
+  const cart = useSelector(state => state.cartReducer)
   const [showCart, setShowCart] = useState(false);
   const handleCart = () => setShowCart(!showCart);
   const allProducts = JSON.parse(localStorage.getItem("products"));

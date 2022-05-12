@@ -1,25 +1,27 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React, { useEffect } from 'react'
 import { Alert, Article, Banner, Catalogue, Campaign, Ingredients, Newsletter, Tag, ServicesOffer } from '../../index';
 import { campaignClean, campaignNatural, articleHome } from "../../../utils/const";
 import { images } from '../../../assets/images/index'
 import "./landingPage.scss";
+import { useDispatch, useSelector } from 'react-redux';
+import { fecthProducts } from '../../../actions'
 
 function LandingPage() {
-  const [productList, setproductList] = useState([])
- 
-  const getData = async () => {
-    try {
-      const response = await axios.get('https://fakestoreapi.com/products');
-      setproductList(response.data);
-    } catch (error) {
-      console.log(error)
+  const dispatch = useDispatch()
+  const productList = useSelector(state => state.productsReducer)
+  
+/* const renderProducts = () => {
+    if (data.loading) {
+      return <h1>Loading</h1>
     }
-  }
+    const productList = data.items
+    return productList
+  } */
 
   useEffect(() => {
-    getData()  
+    dispatch(fecthProducts())
   }, [])
+  
 
   //Saving in local storage
   localStorage.setItem('products', JSON.stringify(productList));
