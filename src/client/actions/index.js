@@ -1,29 +1,35 @@
 import axios from "axios";
 
 export const addProduct = (productId) => {
+  return {
+    type: "ADD_PRODUCT",
+    payload: productId,
+  };
+};
+
+export const getCartProducts = () => {
+  let cartLS = JSON.parse(localStorage.getItem("cart"));
+  if (cartLS) {
     return {
-        type: 'ADD_PRODUCT',
-        payload: productId
+      type: "GET_PRODUCTS",
+      payload: cartLS,
     };
-}
+  }
+  return {
+    type: "GET_PRODUCTS",
+    payload: [],
+  };
+};
 
-export const fecthProducts = () => {
-    return async (dispatch, getState) => {
-        const response = await axios.get('https://fakestoreapi.com/products')
+export const fetchProducts = () => {
+  return async (dispatch, getState) => {
+    dispatch({ type: "api/fetchProducts_request" });
 
-        dispatch({
-            type: 'api/fecthProducts',
-            payload: response.data
-        })
+    try {
+      const response = await axios.get("https://fakestoreapi.com/products");
+      dispatch({ type: "api/fetchProducts_success", payload: response.data });
+    } catch (error) {
+      dispatch({ type: "api/fetchProducts_failure", error });
     }
-}
-
-/* dispatch({ type: 'api/fecthProducts_request' })
-
-try {
-    const response = await axios.get('https://fakestoreapi.com/products')
-    dispatch({ type: 'api/fecthProducts_success', payload: response.data  })
-} catch (error) {
-    dispatch({ type: 'api/fecthProducts_failure', error })
-}
-} */
+  };
+};

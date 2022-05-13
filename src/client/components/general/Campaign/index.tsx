@@ -1,8 +1,16 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import "./campaign.scss";
 import Article from "../Article";
+import { ArticleT } from "../../../interfaces/shared";
 
-function Campaign({ theme, article, image, alt }) {
+type CampaignT = {
+  theme: string, 
+  article: ArticleT, 
+  image: string, 
+  alt?: string
+}
+
+function Campaign({ theme, article, image, alt }: CampaignT): ReactElement {
   
   return (
     <section className="campaign">

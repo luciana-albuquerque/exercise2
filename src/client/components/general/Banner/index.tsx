@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import './banner.scss'
 
-function Banner() {
+function Banner(): ReactElement {
 
   return (
     <div className='banner'>
@@ -11,4 +11,4 @@ function Banner() {
   )
 }
 
-export default Banner
+export default Banner;

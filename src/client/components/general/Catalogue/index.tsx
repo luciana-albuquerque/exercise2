@@ -1,8 +1,15 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import "./catalogue.scss";
 import ProductCard from "../ProductCard";
+import { ProductT } from "../../../interfaces/shared";
 
-function Catalogue({ ratingName, ratingList, beigeTheme }) {
+type CatalogueT = {
+  ratingName: string,
+  ratingList: ProductT[],
+  beigeTheme?: boolean
+}
+
+function Catalogue({ ratingName, ratingList, beigeTheme }: CatalogueT ): ReactElement {
 
   return (
     <div className={`catalogue ${beigeTheme ? "beigeTheme" : ""}`}>

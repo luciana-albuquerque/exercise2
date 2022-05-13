@@ -1,10 +1,11 @@
-import React from "react";
+import React, { ReactElement } from "react";
+import { useDispatch } from 'react-redux';
+import { addProduct } from '../../../actions';
 import { Button, Tag } from "../../index";
 import "./productCard.scss";
-import { useDispatch } from 'react-redux'
-import { addProduct } from '../../../actions'
+import { ProductT } from "../../../interfaces/shared";
 
-function ProductCard({ id, title, description, price, image, category, add }) {
+function ProductCard({ id, title, description, price, image, category }: ProductT): ReactElement {
   const dispatch = useDispatch();
   
   return (

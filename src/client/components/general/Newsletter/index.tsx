@@ -1,8 +1,8 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import "./newsletter.scss";
 import Button from "../Button";
 
-export default function Newsletter() {
+export default function Newsletter(): ReactElement {
   
   return (
     <section className="newsletter">
