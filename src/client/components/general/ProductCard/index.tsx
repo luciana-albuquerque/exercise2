@@ -1,8 +1,13 @@
-import React from "react";
+import React, { ReactElement } from "react";
+import { useDispatch } from 'react-redux';
+import { addProduct } from '../../../actions';
 import { Button, Tag } from "../../index";
 import "./productCard.scss";
+import { ProductT } from "../../../interfaces/shared";
 
-function ProductCard({ id, title, description, price, image, category, add }) {
+function ProductCard({ id, title, description, price, image, category }: ProductT): ReactElement {
+  const dispatch = useDispatch();
+  
   return (
     <article className="product">
       {(category === "jewelery" || title.includes("Women")) && (
@@ -17,7 +22,7 @@ function ProductCard({ id, title, description, price, image, category, add }) {
       <h6>{title}</h6>
       <p>{description}</p>
       <p className="price">${price}</p>
-      <Button text="Add to cart" icon={true} onClick={() => add(id)} />
+      <Button text="Add to cart" icon={true} onClick={() => dispatch(addProduct(id))} />
     </article>
   );
 }

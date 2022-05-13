@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import './alert.scss'
 
-function Alert() {
+function Alert(): ReactElement {
   return (
     <div className='promo'>Free Standard Shipping on orders over $99.99</div>
   )
