@@ -15,12 +15,12 @@ export default function LoginPage():ReactElement {
       const user = await signInWithEmailAndPassword(auth, email, password);
       localStorage.setItem("user", JSON.stringify(user));
       navigate("/");
-    } catch (error) {
+    } catch (error: any) {
       setErrorMessage(error.message);
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault();
     login();
   };
@@ -29,7 +29,7 @@ export default function LoginPage():ReactElement {
     <main className="authPages">
       <div className="content">
         <h3>LOGIN</h3>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={() => handleSubmit}>
           <input
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}

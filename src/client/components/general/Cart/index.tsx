@@ -11,29 +11,30 @@ export default function Cart(): ReactElement {
   const handleCart = () => setShowCart(!showCart);
   const cart = useSelector((state: StateT) => state.cartReducer);
   const allProducts = useSelector((state: StateT) => state.productsReducer.items);
+  const [cartList, setCartList] = useState([])
 
-  const list = allProducts.filter((item) => {
+  const list: ProductT[] = allProducts.filter((item) => {
     return cart.some((idsOnCart) => {
       return idsOnCart === item.id;
     });
   });
 
   useEffect(() => {
+    console.log('useEffect')
     dispatch(getCartProducts());
-  }, []);
+    if (list) {setCartList(list)}
+  }, []);  
 
   return (
     <div className="cart">
-      <>
-        {console.log('allproducts', allProducts)}
-        <a href="#">CART</a>
+        <button className="cartLink" onClick={handleCart}>CART</button>
         {cart?.length !== 0 && (
           <div className="quantity" onClick={handleCart}>
-            <p>{cart?.length}</p>
+            <button className="cartBtn">{cart?.length}</button>
           </div>
         )}
-        {showCart && <ProductDisplay list={list} />}
-      </>
+        {showCart && <ProductDisplay list={cartList} show={handleCart} />}
+        {console.log('list', cartList, list)}
     </div>
   );
 }

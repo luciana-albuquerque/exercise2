@@ -36,12 +36,12 @@ export default function RegisterPage(): ReactElement {
       const user = await createUserWithEmailAndPassword(auth, email, password);
       localStorage.setItem("user", JSON.stringify(user));
       navigate("/");
-    } catch (error) {
+    } catch (error: any) {
       setErrorMessage(error.message);
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault();
     if (validate()) {
       return;
@@ -53,7 +53,7 @@ export default function RegisterPage(): ReactElement {
     <main className="authPages">
       <div className="content">
         <h3>REGISTER</h3>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={() => handleSubmit}>
           <input
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}

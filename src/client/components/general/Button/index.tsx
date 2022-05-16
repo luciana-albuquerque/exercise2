@@ -5,7 +5,7 @@ import { ButtonT } from "../../../interfaces/shared";
 
 function Button({ text, icon, ...props }: ButtonT): ReactElement {
   return (
-    <button {...props}>
+    <button className="button" {...props}>
       {icon && <img src={cart} alt="cart" className="icon" />}
       {text}
     </button>
