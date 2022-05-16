@@ -23,14 +23,14 @@ export default function Cart(): ReactElement {
   }, []);  
 
   return (
-    <div className="cart">
-        <button className="cartLink" onClick={handleCart}>CART</button>
+    <button className="cart" onClick={handleCart}>
+        <p className="cartLink" >CART</p>
         {cart?.length !== 0 && (
-          <div className="quantity" onClick={handleCart}>
-            <button className="cartBtn">{cart?.length}</button>
-          </div>
+          <p className="quantity" >
+            {cart?.length}
+          </p>
         )}
         {showCart && <ProductDisplay list={list} show={handleCart} />}
-    </div>
+    </button>
   );
 }

@@ -17,7 +17,6 @@ function App() {
   onAuthStateChanged(auth, (currentUser) => {
     setUser(currentUser);
   });
-
   return (
     <div className="App">
       <UserContext.Provider value={[user, setUser]}>

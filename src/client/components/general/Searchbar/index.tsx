@@ -28,12 +28,12 @@ export default function Searchbar(): ReactElement {
       <div className="search-icon">
         {!openSearch ? (
           <div>
-            <FaSearch size={12} style={{ color: "$primaryColor" }} onClick={handleClick} />
+            <FaSearch size={12} style={{ color: "$primaryColor", cursor: "pointer" }} onClick={handleClick} />
           </div>
         ) : (
           <div>
             <input type="text" value={query} onChange={(e) => handleSearch(e.target.value)}></input>
-            <GrClose size={12} style={{ color: "$primaryColor" }} onClick={handleClick} />
+            <GrClose size={12} style={{ color: "$primaryColor", cursor: "pointer" }} onClick={handleClick} />
           </div>
         )}
       </div>

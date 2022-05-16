@@ -11,7 +11,7 @@ type ProductDisplayT = {
 export default function ProductDisplay({ list, show }: ProductDisplayT): ReactElement {
   return (
     <div className="productDisplay">
-      <GrClose size={12} style={{ color: "$primaryColor", alignSelf: "flex-end", marginRight:"30px" }} onClick={() => show()}/>
+      <GrClose size={12} style={{ color: "$primaryColor", alignSelf: "flex-end", marginRight:"30px", cursor: "pointer"}} onClick={() => show()}/>
       {list.length === 0 ? (
         <p>Sorry! No products found</p>
       ) : (
