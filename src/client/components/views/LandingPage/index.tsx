@@ -17,13 +17,13 @@ function LandingPage(): ReactElement {
 
 
   // Rating classifications
-  const mostPopular: ProductT[] = productList
+  const mostPopular: ProductT[] = [...productList]
     .sort(function (a, b) {
       return a.rating.count - b.rating.count;
     })
     .splice(0, 4);
 
-  const topRated: ProductT[] = productList
+  const topRated: ProductT[] = [...productList]
     .sort(function (a, b) {
       return a.rating.rate - b.rating.rate;
     })
