@@ -19,18 +19,20 @@ export default function Cart(): ReactElement {
   });
 
   useEffect(() => {
+    console.log('use effect')
     dispatch(getCartProducts());
   }, []);  
 
   return (
     <button className="cart" onClick={handleCart}>
-        <p className="cartLink" >CART</p>
+        <p>CART</p>
         {cart?.length !== 0 && (
           <p className="quantity" >
             {cart?.length}
           </p>
         )}
         {showCart && <ProductDisplay list={list} show={handleCart} />}
+        {console.log('list' , list)}
     </button>
   );
 }

@@ -15,6 +15,7 @@ function LandingPage(): ReactElement {
     dispatch(fetchProducts());
   }, []);
 
+
   // Rating classifications
   const mostPopular: ProductT[] = productList
     .sort(function (a, b) {
