@@ -1,8 +1,8 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import "./footer.scss";
 import Button from "../../general/Button";
 
-function Footer() {
+function Footer(): ReactElement {
   
   return (
     <footer>

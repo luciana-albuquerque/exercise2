@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { ReactElement, useState } from "react";
 import "./authPages.scss";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../../firebase-config";
 import { useNavigate } from "react-router-dom";
 
-export default function LoginPage() {
+export default function LoginPage():ReactElement {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);

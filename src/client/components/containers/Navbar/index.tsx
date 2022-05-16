@@ -1,6 +1,5 @@
-import { useState, useContext } from "react";
+import { useState, useContext, ReactElement } from "react";
 import UserContext from "../../../context/UserContext";
-import CartContext from "../../../context/CartContext";
 import Searchbar from "../../general/Searchbar";
 import Cart from "../../general/Cart";
 import "./navbar.scss";
@@ -12,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GrClose } from "react-icons/gr";
 
-function Navbar() {
+function Navbar(): ReactElement {
   const [user] = useContext(UserContext);
   const [openMenu, setOpenMenu] = useState(false);
   const handleClick = () => setOpenMenu(!openMenu);
@@ -24,8 +23,6 @@ function Navbar() {
     await signOut(auth);
     navigate("/login");
   };
-  const [cart] = useContext(CartContext);
-  const quantity = cart?.length;
 
   return (
     <nav className="navbar">
@@ -63,7 +60,7 @@ function Navbar() {
       </div>
       <div className={openMenu ? "account active" : "account"}>
         <Searchbar />
-        <Cart quantity={quantity} />
+        <Cart />
         {user?.email ? (
           <a onClick={logout}>LOGOUT</a>
         ) : (

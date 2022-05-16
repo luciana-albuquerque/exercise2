@@ -1,15 +1,15 @@
-import React, { useContext } from "react";
+import React, { ReactElement } from "react";
 import "./catalogue.scss";
 import ProductCard from "../ProductCard";
-import CartContext from "../../../context/CartContext";
+import { ProductT } from "../../../interfaces/shared";
 
-function Catalogue({ ratingName, ratingList, beigeTheme }) {
-  const [cart, setCart] = useContext(CartContext);
+type CatalogueT = {
+  ratingName: string,
+  ratingList: ProductT[],
+  beigeTheme?: boolean
+}
 
-  const addToCart = (productId) => {
-    setCart((prev) => [...prev, productId]);
-    localStorage.setItem("cart", JSON.stringify([...cart, productId]));
-  };
+function Catalogue({ ratingName, ratingList, beigeTheme }: CatalogueT ): ReactElement {
 
   return (
     <div className={`catalogue ${beigeTheme ? "beigeTheme" : ""}`}>
@@ -22,7 +22,7 @@ function Catalogue({ ratingName, ratingList, beigeTheme }) {
         <div className="products">
           {ratingList.map((filtered) => {
             return (
-              <ProductCard {...filtered} key={filtered.id} add={addToCart} />
+              <ProductCard {...filtered} key={filtered.id} />
             );
           })}
         </div>

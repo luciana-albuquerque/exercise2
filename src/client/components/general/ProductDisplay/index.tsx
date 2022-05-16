@@ -1,7 +1,12 @@
-import React from "react";
+import React, { ReactElement } from "react";
+import { ProductT } from "../../../interfaces/shared";
 import "./productDisplay.scss";
 
-export default function ProductDisplay({ list }) {
+type ProductDisplayT = {
+  list: ProductT[]
+}
+
+export default function ProductDisplay({ list }: ProductDisplayT): ReactElement {
   return (
     <div className="productDisplay">
       {list.length === 0 ? (

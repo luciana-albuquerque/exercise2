@@ -1,9 +1,9 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import "./ingredients.scss";
 import { ingredients } from "../../../utils/const";
 import IngredientCard from "../IngredientCard";
 
-export default function Ingredient() {
+export default function Ingredient(): ReactElement {
   
   return (
     <section className="ingredientList">
