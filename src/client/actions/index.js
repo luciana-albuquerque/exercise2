@@ -9,7 +9,6 @@ export const addProduct = (productId) => {
 
 export const getCartProducts = () => {
   let cartLS = JSON.parse(localStorage.getItem("cart"));
-  console.log('cartLS', cartLS)
   if (cartLS) {
     return {
       type: "GET_PRODUCTS",
