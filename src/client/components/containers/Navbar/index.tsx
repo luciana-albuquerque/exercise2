@@ -1,4 +1,4 @@
-import { useState, useContext, ReactElement } from "react";
+import React, { useState, useContext, ReactElement } from "react";
 import UserContext from "../../../context/UserContext";
 import Searchbar from "../../general/Searchbar";
 import Cart from "../../general/Cart";
@@ -12,12 +12,12 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { GrClose } from "react-icons/gr";
 
 function Navbar(): ReactElement {
-  const [user] = useContext(UserContext);
+  const [user] =  React.useContext(UserContext);
   const [openMenu, setOpenMenu] = useState(false);
   const handleClick = () => setOpenMenu(!openMenu);
   let navigate = useNavigate();
 
-  const logout = async (e) => {
+  const logout = async (e: React.FormEvent<HTMLInputElement> ): Promise<void> => {
     e.preventDefault();
     localStorage.removeItem("user");
     await signOut(auth);
@@ -62,7 +62,7 @@ function Navbar(): ReactElement {
         <Searchbar />
         <Cart />
         {user?.email ? (
-          <a onClick={logout}>LOGOUT</a>
+          <a   onClick={() => logout}>LOGOUT</a>
         ) : (
           <a href="/login">LOGIN</a>
         )}

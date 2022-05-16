@@ -3,19 +3,26 @@
 
 .cart {
     @include s.flexCenter(row);
+    padding: 0;
+    border: none;
+    background: none;
+    margin: 5px;
+    font-size: 1em;
+    font-weight: 800;
+    cursor: pointer;
 
     .quantity {
-        @include s.flexCenter(row);
-        justify-content: center;
-        border: 0px solid $primaryColor;
+        height: 25px;
+        width: 25px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 12px;
+        font-size: 1em;
+        font-weight: bold;
+        color: white;
+        background-color: #354e57;
+        border: 1.5px solid #354E57;
         border-radius: 50%;
-        background-color: $primaryColor;
-        width: 20px;
-        height: 20px; 
-
-        p {
-            color: white;
-        }
     }
 
     .productDisplay {

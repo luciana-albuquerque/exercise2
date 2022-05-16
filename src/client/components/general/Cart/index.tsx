@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ReactElement } from "react";
+import { useState, useEffect, ReactElement } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartProducts } from "../../../actions";
 import { ProductT, StateT } from "../../../interfaces/shared";
@@ -12,28 +12,27 @@ export default function Cart(): ReactElement {
   const cart = useSelector((state: StateT) => state.cartReducer);
   const allProducts = useSelector((state: StateT) => state.productsReducer.items);
 
-  const list = allProducts.filter((item) => {
+  const list: ProductT[] = allProducts.filter((item) => {
     return cart.some((idsOnCart) => {
       return idsOnCart === item.id;
     });
   });
 
   useEffect(() => {
+    console.log('use effect')
     dispatch(getCartProducts());
-  }, []);
+  }, []);  
 
   return (
-    <div className="cart">
-      <>
-        {console.log('allproducts', allProducts)}
-        <a href="#">CART</a>
+    <button className="cart" onClick={handleCart}>
+        <p>CART</p>
         {cart?.length !== 0 && (
-          <div className="quantity" onClick={handleCart}>
-            <p>{cart?.length}</p>
-          </div>
+          <p className="quantity" >
+            {cart?.length}
+          </p>
         )}
-        {showCart && <ProductDisplay list={list} />}
-      </>
-    </div>
+        {showCart && <ProductDisplay list={list} show={handleCart} />}
+        {console.log('list' , list)}
+    </button>
   );
 }

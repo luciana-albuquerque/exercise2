@@ -8,33 +8,24 @@ import RegisterPage from "./client/components/views/AuthPages/RegisterPage";
 import UserContext from "./client/context/UserContext";
 import { auth } from "./firebase-config";
 import { onAuthStateChanged } from "firebase/auth";
-import { useState, useEffect } from "react";
-import CartContext from "./client/context/CartContext";
+import { useState } from "react";
+
 
 function App() {
   const [user, setUser] = useState({});
-  const [cart, setCart] = useState([]);
-
-  useEffect(() => {
-    const cartItems = JSON.parse(localStorage.getItem("cart"));
-    if (cartItems) setCart(cartItems);
-  }, []);
 
   onAuthStateChanged(auth, (currentUser) => {
     setUser(currentUser);
   });
-
   return (
     <div className="App">
       <UserContext.Provider value={[user, setUser]}>
-        <CartContext.Provider value={[cart, setCart]}>
           <Navbar />
           <Routes>
             <Route exact path="/" element={<LandingPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/login" element={<LoginPage />} />
           </Routes>
-        </CartContext.Provider>
       </UserContext.Provider>
       <Footer />
     </div>
