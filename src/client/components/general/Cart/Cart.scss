@@ -4,18 +4,28 @@
 .cart {
     @include s.flexCenter(row);
 
-    .quantity {
-        @include s.flexCenter(row);
-        justify-content: center;
-        border: 0px solid $primaryColor;
-        border-radius: 50%;
-        background-color: $primaryColor;
-        width: 20px;
-        height: 20px; 
+    .cartLink {
+        padding: 0;
+        border: none;
+        background: none;
+        margin: 5px;
+        font-size: 1em;
+        font-weight: 800;
+    }
 
-        p {
-            color: white;
-        }
+    .quantity button {
+        height: 30px;
+        width: 30px;
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: 1em;
+        font-weight: bold;
+        border-radius: 50%;
+        background-color: #354e57;
+        border: 1.5px solid #354E57;
+        color: white;
+        text-align: center;
+        margin: 5px;
     }
 
     .productDisplay {

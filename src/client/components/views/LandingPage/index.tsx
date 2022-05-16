@@ -15,9 +15,6 @@ function LandingPage(): ReactElement {
     dispatch(fetchProducts());
   }, []);
 
-  //Saving in local storage
-  localStorage.setItem("products", JSON.stringify(productList));
-
   // Rating classifications
   const mostPopular: ProductT[] = productList
     .sort(function (a, b) {
