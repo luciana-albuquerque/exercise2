@@ -12,17 +12,16 @@ export default function Cart(): ReactElement {
   const cart = useSelector((state: StateT) => state.cartReducer);
   const allProducts = useSelector((state: StateT) => state.productsReducer.items);
 
-  const list: ProductT[] = allProducts.filter((item) => {
-    return cart.some((idsOnCart) => {
+  const list: ProductT[] = [...allProducts].filter((item) => {
+    return [...cart].some((idsOnCart) => {
       return idsOnCart === item.id;
     });
   });
 
   useEffect(() => {
-    console.log('use effect')
     dispatch(getCartProducts());
   }, []);  
-
+  
   return (
     <button className="cart" onClick={handleCart}>
         <p>CART</p>
@@ -32,7 +31,6 @@ export default function Cart(): ReactElement {
           </p>
         )}
         {showCart && <ProductDisplay list={list} show={handleCart} />}
-        {console.log('list' , list)}
     </button>
   );
 }

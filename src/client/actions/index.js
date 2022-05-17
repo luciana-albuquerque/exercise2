@@ -22,7 +22,7 @@ export const getCartProducts = () => {
 };
 
 export const fetchProducts = () => {
-  return async (dispatch, getState) => {
+  return async (dispatch) => {
     dispatch({ type: "api/fetchProducts_request" });
 
     try {
