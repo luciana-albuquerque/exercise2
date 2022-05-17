@@ -1,4 +1,5 @@
 import React, { useState, useContext, ReactElement } from "react";
+import { NavLink } from "react-router-dom";
 import UserContext from "../../../context/UserContext";
 import Searchbar from "../../general/Searchbar";
 import Cart from "../../general/Cart";
@@ -17,8 +18,7 @@ function Navbar(): ReactElement {
   const handleClick = () => setOpenMenu(!openMenu);
   let navigate = useNavigate();
 
-  const logout = async (e: React.FormEvent<HTMLInputElement> ): Promise<void> => {
-    e.preventDefault();
+  const logout = async () => {
     localStorage.removeItem("user");
     await signOut(auth);
     navigate("/login");
@@ -32,29 +32,31 @@ function Navbar(): ReactElement {
         ) : (
           <GiHamburgerMenu size={20} style={{ color: "$primaryColor" }} />
         )}
-        <a href="#">LOGIN</a>
+        <NavLink to='/login'>
+            LOGIN
+          </NavLink>
       </div>
       <div className={openMenu ? "about active" : "about"}>
-        <a href="#">ABOUT</a>
-        <a href="#">CONSULTATION</a>
+        <NavLink to='/about'>ABOUT</NavLink>
+        <NavLink to='/consultation'>CONSULTATION</NavLink>
       </div>
       <div className="shop">
         <h2>sooth</h2>
         <ul>
           <li>
-            <a href="#">Acne</a>
+          <NavLink to='/acne'>Acne</NavLink>
           </li>
           <li>
-            <a href="#">Sun</a>
+          <NavLink to='/sun'>Sun</NavLink>
           </li>
           <li>
-            <a href="#">Eczema</a>
+          <NavLink to='/eczema'>Eczema</NavLink>
           </li>
           <li>
-            <a href="#">Psoriasis</a>
+          <NavLink to='/psoriasis'>Psoriasis</NavLink>Psoriasis
           </li>
           <li>
-            <a href="#">Vitiligio</a>
+            <NavLink to='/vitiligio'>Vitiligio</NavLink>
           </li>
         </ul>
       </div>
@@ -62,9 +64,11 @@ function Navbar(): ReactElement {
         <Searchbar />
         <Cart />
         {user?.email ? (
-          <a   onClick={() => logout}>LOGOUT</a>
+          <button onClick={logout}>LOGOUT</button>
         ) : (
-          <a href="/login">LOGIN</a>
+          <NavLink to='/login'>
+            LOGIN
+          </NavLink>
         )}
       </div>
     </nav>

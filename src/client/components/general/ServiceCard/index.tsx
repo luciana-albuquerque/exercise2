@@ -1,19 +1,19 @@
-import React, { ReactElement } from 'react'
-import './serviceCard.scss'
+import { ReactElement } from "react";
+import { Link } from "react-router-dom";
+import "./serviceCard.scss";
 
 type ServiceCardT = {
-  img: any, 
-  description: string, 
-  link: string, 
-}
+  img: any;
+  description: string;
+  link: string;
+};
 
 export default function ServiceCard({ img, description, link }: ServiceCardT): ReactElement {
-
   return (
-    <div className='service'>
-        <img src={img} alt={description}></img>
-        <p>{description}</p>
-        <a href='#'>{link}</a>
+    <div className="service">
+      <img src={img} alt={description}></img>
+      <p>{description}</p>
+      <Link to={`/${link}`}>{link}</Link>
     </div>
-  )
+  );
 }

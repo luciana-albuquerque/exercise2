@@ -8,9 +8,7 @@ export default function RegisterPage(): ReactElement {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [emailErr, setEmailErr] = useState(false);
-  const [pwdError, setPwdError] = useState(false);
-  const [confirmPwdError, setConfirmPwdError] = useState(false);
+  const [error, setError] = useState({emailErr: false, pwdError: false, confirmPwdError: false})
   const [errorMessage, setErrorMessage] = useState("");
 
   let navigate = useNavigate();
@@ -23,10 +21,11 @@ export default function RegisterPage(): ReactElement {
     const emailVal = emailRgx.test(email);
     const pwdVal = pwdRgx.test(password);
     const confirmPwdVal = confirmPassword === password;
-
-    setEmailErr(!emailVal);
-    setPwdError(!pwdVal);
-    setConfirmPwdError(!confirmPwdVal);
+    setError({
+      emailErr: !emailVal, 
+      pwdError: !pwdVal, 
+      confirmPwdError: !confirmPwdVal
+    })
 
     return !emailVal || !pwdVal || !confirmPwdVal;
   };
@@ -36,12 +35,12 @@ export default function RegisterPage(): ReactElement {
       const user = await createUserWithEmailAndPassword(auth, email, password);
       localStorage.setItem("user", JSON.stringify(user));
       navigate("/");
-    } catch (error) {
+    } catch (error: any) {
       setErrorMessage(error.message);
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     if (validate()) {
       return;
@@ -68,15 +67,15 @@ export default function RegisterPage(): ReactElement {
             placeholder="Confirm password"
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
-          {emailErr && <p className="errorMessage">Your email is invalid</p>}
-          {pwdError && <p className="errorMessage">Your password is invalid</p>}
-          {confirmPwdError && (
+          {error.emailErr && <p className="errorMessage">Your email is invalid</p>}
+          {error.pwdError && <p className="errorMessage">Your password is invalid</p>}
+          {error.confirmPwdError && (
             <p className="errorMessage">Passwords do not match.</p>
           )}
           {errorMessage?.includes("already-in-use") && (
             <p className="errorMessage">Email already registered.</p>
           )}
-          <button type="submit">Create Account</button>
+          <button type="submit" className="button">Create Account</button>
         </form>
         <p>
           Already have an account? <a href="/login">Sign in here.</a>

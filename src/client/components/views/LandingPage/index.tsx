@@ -1,4 +1,4 @@
-import React, { useEffect, ReactElement } from "react";
+import { useEffect, ReactElement } from "react";
 import { Alert, Article, Banner, Catalogue, Campaign, Ingredients, Newsletter, Tag, ServicesOffer } from "../../index";
 import { campaignClean, campaignNatural, articleHome } from "../../../utils/const";
 import "./landingPage.scss";

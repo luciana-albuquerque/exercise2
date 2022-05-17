@@ -1,6 +1,7 @@
 import React, { ReactElement } from "react";
 import "./footer.scss";
 import Button from "../../general/Button";
+import { Link } from "react-router-dom";
 
 function Footer(): ReactElement {
   
@@ -54,13 +55,13 @@ function Footer(): ReactElement {
           <p>SOOTH ALL RIGHTS RESERVED</p>
           <ul>
             <li>
-              <a href="#">Privacy Policy</a>
+              <Link to='/'>Privacy Policy</Link>
             </li>
             <li>
-              <a href="#">Terms of Use</a>
+              <Link to='/'>Terms of Use</Link>
             </li>
             <li>
-              <a href="#">Contact Us</a>
+              <Link to='/'>Contact Us</Link>
             </li>
           </ul>
         </div>
