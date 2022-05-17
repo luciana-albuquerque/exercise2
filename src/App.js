@@ -1,5 +1,5 @@
 import "./client/assets/styles/_styles.scss";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./client/components/containers/Navbar";
 import Footer from "./client/components/containers/Footer";
 import LandingPage from "./client/components/views/LandingPage";
@@ -7,7 +7,7 @@ import LoginPage from "./client/components/views/AuthPages/LoginPage";
 import RegisterPage from "./client/components/views/AuthPages/RegisterPage";
 import UserContext from "./client/context/UserContext";
 import { auth } from "./firebase-config";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -18,24 +18,19 @@ function App() {
     setUser(currentUser);
   });
 
-/*   useEffect(() => {
-    const authentication = getAuth();
-    if (authentication.currentUser.isAnonymous === false) {
-      setIsLogged(true);
-    } else {
-      setIsLogged(false);
-    }
-    console.log('is logged working?', isLogged)
-  }, []); */
+  useEffect(() => {
+    if (user?.isAnonymous === false) setIsLogged(true);
+    if (!user) { setIsLogged(false) } 
+  }, [user, isLogged, setIsLogged]);
 
   return (
     <div className="App">
       <UserContext.Provider value={[user, setUser]}>
         <Navbar />
         <Routes>
-          <Route exact path="/" element={<LandingPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route exact path="/" element={ <LandingPage /> } />
+          <Route path="/register" element={ !isLogged ? <RegisterPage /> : <Navigate to="/"/> } />
+          <Route path="/login" element={ !isLogged ? <LoginPage /> : <Navigate to="/"/> } />
         </Routes>
       </UserContext.Provider>
       <Footer />

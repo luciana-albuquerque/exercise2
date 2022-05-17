@@ -64,7 +64,7 @@ function Navbar(): ReactElement {
         <Searchbar />
         <Cart />
         {user?.email ? (
-          <button onClick={logout}>LOGOUT</button>
+          <button className="btnLink" onClick={logout}>LOGOUT</button>
         ) : (
           <NavLink to='/login'>
             LOGIN
