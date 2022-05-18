@@ -1,4 +1,5 @@
 import { ReactElement, useState } from "react";
+import { Link } from "react-router-dom";
 import "./authPages.scss";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../../firebase-config";
@@ -20,7 +21,7 @@ export default function LoginPage(): ReactElement {
     }
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
     login();
   };
@@ -48,7 +49,7 @@ export default function LoginPage(): ReactElement {
           <button type="submit" className="button">Login</button>
         </form>
         <p>
-          Don't have an account? <a href="/register">Register now.</a>
+          Don't have an account? <Link to="/register">Register now.</Link>
         </p>
       </div>
     </main>

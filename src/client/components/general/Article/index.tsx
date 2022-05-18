@@ -1,8 +1,7 @@
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
 import { ArticleT } from '../../../interfaces/shared'
 import Button from '../Button'
 import './article.scss'
-
 
 function Article( {title1, title2, text, button}: ArticleT
    ): ReactElement {

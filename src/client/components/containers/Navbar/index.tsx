@@ -1,4 +1,4 @@
-import React, { useState, useContext, ReactElement } from "react";
+import React, { useState, ReactElement } from "react";
 import { NavLink } from "react-router-dom";
 import UserContext from "../../../context/UserContext";
 import Searchbar from "../../general/Searchbar";
@@ -13,7 +13,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { GrClose } from "react-icons/gr";
 
 function Navbar(): ReactElement {
-  const [user] =  React.useContext(UserContext);
+  const [user] = React.useContext(UserContext);
   const [openMenu, setOpenMenu] = useState(false);
   const handleClick = () => setOpenMenu(!openMenu);
   let navigate = useNavigate();
@@ -32,31 +32,29 @@ function Navbar(): ReactElement {
         ) : (
           <GiHamburgerMenu size={20} style={{ color: "$primaryColor" }} />
         )}
-        <NavLink to='/login'>
-            LOGIN
-          </NavLink>
+        <NavLink to="/login">LOGIN</NavLink>
       </div>
       <div className={openMenu ? "about active" : "about"}>
-        <NavLink to='/about'>ABOUT</NavLink>
-        <NavLink to='/consultation'>CONSULTATION</NavLink>
+        <NavLink to="/about">ABOUT</NavLink>
+        <NavLink to="/consultation">CONSULTATION</NavLink>
       </div>
       <div className="shop">
         <h2>sooth</h2>
         <ul>
           <li>
-          <NavLink to='/acne'>Acne</NavLink>
+            <NavLink to="/acne">Acne</NavLink>
           </li>
           <li>
-          <NavLink to='/sun'>Sun</NavLink>
+            <NavLink to="/sun">Sun</NavLink>
           </li>
           <li>
-          <NavLink to='/eczema'>Eczema</NavLink>
+            <NavLink to="/eczema">Eczema</NavLink>
           </li>
           <li>
-          <NavLink to='/psoriasis'>Psoriasis</NavLink>Psoriasis
+            <NavLink to="/psoriasis">Psoriasis</NavLink>
           </li>
           <li>
-            <NavLink to='/vitiligio'>Vitiligio</NavLink>
+            <NavLink to="/vitiligio">Vitiligio</NavLink>
           </li>
         </ul>
       </div>
@@ -64,11 +62,11 @@ function Navbar(): ReactElement {
         <Searchbar />
         <Cart />
         {user?.email ? (
-          <button className="btnLink" onClick={logout}>LOGOUT</button>
+          <button className="btnLink" onClick={logout}>
+            LOGOUT
+          </button>
         ) : (
-          <NavLink to='/login'>
-            LOGIN
-          </NavLink>
+          <NavLink to="/login">LOGIN</NavLink>
         )}
       </div>
     </nav>

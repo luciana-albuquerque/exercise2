@@ -1,21 +1,19 @@
-import React, { ReactElement, useState } from "react";
+import { ReactElement, useState } from "react";
 import ProductDisplay from "../ProductDisplay";
 import "./searchbar.scss";
 import { GrClose } from "react-icons/gr";
 import { FaSearch } from "react-icons/fa";
-import { ProductT } from "../../../interfaces/shared";
+import { ProductT, StateT } from "../../../interfaces/shared";
 import { useSelector } from "react-redux";
 
 export default function Searchbar(): ReactElement {
   const [openSearch, setOpenSearch] = useState<boolean>(false);
   const [query, setQuery] = useState('');
   const [productsFound, setProductsFound] = useState<ProductT[]>([])
-  function handleClick() {
-    return setOpenSearch(!openSearch);
-  }
-  const allProducts:ProductT[] = useSelector((state) => state.productsReducer.items);
+  const allProducts:ProductT[] = useSelector((state: StateT) => state.productsReducer.items);
+  const handleClick = () => { setOpenSearch(!openSearch) }
 
-  const handleSearch = (input: React.SetStateAction<string>) => {
+  const handleSearch = (input: string) => {
     setQuery(input);
     const filteredList = allProducts.filter((item) =>
       item.title.toLowerCase().includes(input.toLowerCase())

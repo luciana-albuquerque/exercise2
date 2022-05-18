@@ -1,17 +1,17 @@
-import React, { ReactElement } from "react";
+import { ReactElement } from "react";
 import { ProductT } from "../../../interfaces/shared";
 import { GrClose } from "react-icons/gr";
 import "./productDisplay.scss";
 
 type ProductDisplayT = {
   list: ProductT[];
-  show: () => void;
+  show?: () => void;
 };
 
 export default function ProductDisplay({ list, show }: ProductDisplayT): ReactElement {
   return (
     <div className="productDisplay">
-      <GrClose size={12} style={{ color: "$primaryColor", alignSelf: "flex-end", marginRight:"30px", cursor: "pointer"}} onClick={() => show()}/>
+      <GrClose size={12} style={{ color: "$primaryColor", alignSelf: "flex-end", marginRight:"30px", cursor: "pointer"}} onClick={show}/>
       {list.length === 0 ? (
         <p>Sorry! No products found</p>
       ) : (

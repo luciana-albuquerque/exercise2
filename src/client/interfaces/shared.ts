@@ -1,10 +1,10 @@
 export type ProductT = {
-    id: any;
+    id: number;
     title: string;
-    description: any;
-    price: any;
-    image: any;
-    category: any;
+    description: string;
+    price: number;
+    image: string;
+    category: string;
     rating: {
       rate: number,
       count: number
@@ -13,7 +13,8 @@ export type ProductT = {
 
 export type ButtonT = {
     text: string,
-    icon?: any,
+    icon?: boolean,
+    onClick?: () => void;
   }
 
 export type ArticleT = {
@@ -25,7 +26,7 @@ export type ArticleT = {
 
 export type IngredientCardT = {
   name: string, 
-  img: any, 
+  img: string, 
   description: string
 }
 

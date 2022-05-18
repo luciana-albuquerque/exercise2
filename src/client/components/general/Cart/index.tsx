@@ -13,8 +13,8 @@ export default function Cart(): ReactElement {
   const allProducts = useSelector((state: StateT) => state.productsReducer.items);
 
   const list: ProductT[] = [...allProducts].filter((item) => {
-    return [...cart].some((idsOnCart) => {
-      return idsOnCart === item.id;
+    return cart.some((idsOnCart) => { 
+      return Number(idsOnCart) === item.id;
     });
   });
 

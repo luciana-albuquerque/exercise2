@@ -2,7 +2,7 @@ import React, { ReactElement, useState } from "react";
 import "./authPages.scss";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../../firebase-config";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function RegisterPage(): ReactElement {
   const [email, setEmail] = useState("");
@@ -40,7 +40,7 @@ export default function RegisterPage(): ReactElement {
     }
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validate()) {
       return;
@@ -78,7 +78,7 @@ export default function RegisterPage(): ReactElement {
           <button type="submit" className="button">Create Account</button>
         </form>
         <p>
-          Already have an account? <a href="/login">Sign in here.</a>
+          Already have an account? <Link to="/login">Sign in here.</Link>
         </p>
       </div>
     </main>

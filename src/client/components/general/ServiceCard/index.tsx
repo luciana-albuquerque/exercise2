@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./serviceCard.scss";
 
 type ServiceCardT = {
-  img: any;
+  img: string;
   description: string;
   link: string;
 };
