@@ -1,12 +1,12 @@
 import { ReactElement } from "react";
 import "./button.scss";
-import cart from "../../../assets/images/shopping-cart.png";
+import { images } from "../../../assets/images";
 import { ButtonT } from "../../../interfaces/shared";
 
 function Button({ text, icon, ...props }: ButtonT): ReactElement {
   return (
     <button className="button" {...props}>
-      {icon && <img src={cart} alt="cart" className="icon" />}
+      {icon && <img src={images.cart} alt="cart" className="icon" />}
       {text}
     </button>
   );

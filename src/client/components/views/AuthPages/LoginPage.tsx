@@ -1,13 +1,14 @@
-import React, { ReactElement, useState } from "react";
+import { ReactElement, useState } from "react";
+import { Link } from "react-router-dom";
 import "./authPages.scss";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../../firebase-config";
 import { useNavigate } from "react-router-dom";
 
-export default function LoginPage():ReactElement {
+export default function LoginPage(): ReactElement {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState(undefined);
+  const [errorMessage, setErrorMessage] = useState('');
   let navigate = useNavigate();
 
   const login = async () => {
@@ -15,12 +16,12 @@ export default function LoginPage():ReactElement {
       const user = await signInWithEmailAndPassword(auth, email, password);
       localStorage.setItem("user", JSON.stringify(user));
       navigate("/");
-    } catch (error) {
+    } catch (error: any) {
       setErrorMessage(error.message);
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
     login();
   };
@@ -45,10 +46,10 @@ export default function LoginPage():ReactElement {
           {errorMessage?.includes("wrong") && (
             <p className="errorMessage">Email or password are invalid.</p>
           )}
-          <button type="submit">Login</button>
+          <button type="submit" className="button">Login</button>
         </form>
         <p>
-          Don't have an account? <a href="/register">Register now.</a>
+          Don't have an account? <Link to="/register">Register now.</Link>
         </p>
       </div>
     </main>
