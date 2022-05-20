@@ -38,3 +38,8 @@ export type StateT = {
   },
   cartReducer: string[]
 }
+
+export type ProductDisplayT = {
+  productsFound?: ProductT[];
+  show?: () => void;
+};

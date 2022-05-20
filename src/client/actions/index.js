@@ -7,6 +7,13 @@ export const addProduct = (productId) => {
   };
 };
 
+export const removeProduct = (productId) => {
+  return {
+    type: "REMOVE_PRODUCT",
+    payload: productId,
+  };
+};
+
 export const getCartProducts = () => {
   let cartLS = JSON.parse(localStorage.getItem("cart"));
   if (cartLS) {
@@ -21,15 +28,15 @@ export const getCartProducts = () => {
   };
 };
 
+//thunk middleware
 export const fetchProducts = () => {
-  return async (dispatch) => {
-    dispatch({ type: "api/fetchProducts_request" });
-
+  return async (dispatch, getState) => {
+    dispatch({ type: "FETCH_PRODUCTS_REQUEST" });
     try {
       const response = await axios.get("https://fakestoreapi.com/products");
-      dispatch({ type: "api/fetchProducts_success", payload: response.data });
+      dispatch({ type: "FETCH_PRODUCTS_SUCCESS", payload: response.data });
     } catch (error) {
-      dispatch({ type: "api/fetchProducts_failure", error });
+      dispatch({ type: "FETCH_PRODUCTS_FAILURE", error });
     }
   };
 };

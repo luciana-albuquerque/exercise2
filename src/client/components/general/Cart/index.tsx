@@ -1,8 +1,8 @@
 import { useState, useEffect, ReactElement } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartProducts } from "../../../actions";
-import { ProductT, StateT } from "../../../interfaces/shared";
-import ProductDisplay from "../ProductDisplay";
+import { StateT } from "../../../interfaces/shared";
+import CartDisplay from "../ProductDisplay/cartDisplay"
 import "./Cart.scss";
 
 export default function Cart(): ReactElement {
@@ -10,13 +10,6 @@ export default function Cart(): ReactElement {
   const [showCart, setShowCart] = useState(false);
   const handleCart = () => setShowCart(!showCart);
   const cart = useSelector((state: StateT) => state.cartReducer);
-  const allProducts = useSelector((state: StateT) => state.productsReducer.items);
-
-  const list: ProductT[] = [...allProducts].filter((item) => {
-    return cart.some((idsOnCart) => { 
-      return Number(idsOnCart) === item.id;
-    });
-  });
 
   useEffect(() => {
     dispatch(getCartProducts());
@@ -24,13 +17,13 @@ export default function Cart(): ReactElement {
   
   return (
     <button className="cart" onClick={handleCart}>
-        <p>CART</p>
-        {cart?.length !== 0 && (
-          <p className="quantity" >
-            {cart?.length}
-          </p>
-        )}
-        {showCart && <ProductDisplay list={list} show={handleCart} />}
+      <p>CART</p>
+      {cart?.length !== 0 && (
+        <p className="quantity" >
+          {cart?.length}
+        </p>
+      )}
+      {showCart && <CartDisplay show={handleCart} />}
     </button>
   );
 }

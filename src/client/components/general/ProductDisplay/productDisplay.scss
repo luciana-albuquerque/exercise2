@@ -10,6 +10,13 @@
     right: 0;
     margin: 15px 0;
     padding: 30px 0;
+    font-weight: 400;
+
+    header {
+        @include s.flexCenter(row);
+        width: 80%;
+        justify-content: space-between;
+    }
 
     .item {
         @include s.flexCenter(row);
@@ -42,6 +49,12 @@
                 text-overflow: ellipsis;
                 width: 100%;
             }
+        }
+
+        .quantities {
+            @include s.flexCenter(row);
+            width: 80%;
+            margin: 10px;
         }
     }
 }
