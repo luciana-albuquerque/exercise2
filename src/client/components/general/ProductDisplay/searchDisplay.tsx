@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 import { ProductDisplayT } from "../../../interfaces/shared";
 import "./productDisplay.scss";
 
-export default function ProductDisplay({ productsFound }: ProductDisplayT): ReactElement {
+export default function SearchDisplay({ productsFound }: ProductDisplayT): ReactElement {
   return (
     <div className="productDisplay">
       {productsFound?.length === 0 ? (

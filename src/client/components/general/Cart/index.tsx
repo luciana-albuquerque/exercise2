@@ -2,7 +2,7 @@ import { useState, useEffect, ReactElement } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartProducts } from "../../../actions";
 import { StateT } from "../../../interfaces/shared";
-import CartDisplay from "../ProductDisplay/cartDisplay"
+import CartDisplay from "../ProductDisplay/CartDisplay";
 import "./Cart.scss";
 
 export default function Cart(): ReactElement {
@@ -13,17 +13,15 @@ export default function Cart(): ReactElement {
 
   useEffect(() => {
     dispatch(getCartProducts());
-  }, []);  
-  
+  }, []);
+
   return (
-    <button className="cart" onClick={handleCart}>
-      <p>CART</p>
-      {cart?.length !== 0 && (
-        <p className="quantity" >
-          {cart?.length}
-        </p>
-      )}
+    <div className="cart" >
+      <button className="btnLink" onClick={handleCart}>
+        <p>CART</p>
+        {cart?.length !== 0 && <p className="quantity">{cart?.length}</p>}
+      </button>
       {showCart && <CartDisplay show={handleCart} />}
-    </button>
+    </div>
   );
 }

@@ -2,14 +2,9 @@
 @import '../../../assets/styles/variables';
 
 .cart {
-    @include s.flexCenter(row);
-    padding: 0;
-    border: none;
-    background: none;
-    margin: 5px;
-    font-size: 1em;
-    font-weight: 800;
-    cursor: pointer;
+    button {
+      @include s.flexCenter(row); 
+    } 
 
     .quantity {
         height: 25px;
