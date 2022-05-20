@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import "./newsletter.scss";
-import Button from "../Button";
+import {Button} from "../../index";
 
 export default function Newsletter(): ReactElement {
   

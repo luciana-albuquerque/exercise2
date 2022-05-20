@@ -1,0 +1,22 @@
+@use '../../../../assets/styles/styles' as s;
+@import '../../../../assets/styles/variables';
+
+.contactDetails {
+    @include s.flexCenter(row);
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #FAFAFA;
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 15px;
+        margin: 15px;
+    }
+
+    img {
+        height: 50vh;
+    }
+}

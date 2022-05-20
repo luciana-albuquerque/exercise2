@@ -1,0 +1,53 @@
+@use '../../../../assets/styles/styles' as s;
+@import '../../../../assets/styles/variables';
+
+.contactPage {
+    @include s.flexCenter(column);
+    justify-content: space-around;
+    width: 100vw;
+    background-color: #FAFAFA;
+    padding: 30vh 10vw 20vh;
+
+    .cities {
+        @include s.flexCenter(row);
+        flex-wrap: wrap;
+        width: 100vw;
+        padding: 100px;
+        justify-content: space-around;
+    
+        @include s.mobile {
+            @include s.flexCenter(column);
+            height: fit-content;
+            row-gap: 30px;
+        }
+    }
+
+    .cityCard {
+        @include s.flexCenter(column);
+        height: fit-content;
+        width: 250px;
+        justify-content: space-between;
+        background-color: $backgroundColor;
+        padding: 30px;
+
+        img {
+            width: 150px;
+            margin: 20px;
+        }
+    
+        p {
+            text-align: center;
+            font-size: 1.15rem;
+            color: $primaryColor;
+        }
+    
+        a {
+            text-decoration: underline;
+            color: $primaryColor;
+        }
+    }
+}
+
+/* {
+        
+    } */

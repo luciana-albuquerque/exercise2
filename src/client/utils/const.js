@@ -97,5 +97,32 @@ export const services = [
     img: images.phone,
     description: "Curbside pickup",
     link: "Learn more",
-  }
+  },
+];
+
+export const contactList = [
+  { name: "Lisbon", 
+    address: "Rua da Esperança, 176", 
+    phone: "+352 918736095", 
+    img: "https://images.unsplash.com/photo-1596990729433-1c2ef29a3ce8?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160",
+    url: 'lisbon'
+  },
+  { name: "London", 
+    address: "London Street 176", 
+    phone: "+49 918736095", 
+    img: "https://images.unsplash.com/photo-1604252560984-a469a00e43fe?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160",
+    url: 'london'
+  },
+  { name: "Madrid", 
+    address: "Calle Esperança, 176", 
+    phone: "+33 918736095", 
+    img: "https://images.unsplash.com/photo-1563295806-c0ce59d3adc4?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1048",
+    url: 'madrid' 
+  },
+  { name: "Delhi", 
+    address: "Rua da Esperança, 176", 
+    phone: "+352 918736095", 
+    img: "https://images.unsplash.com/photo-1591626756435-414d56deb180?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160",
+    url: 'delhi' 
+  },
 ];

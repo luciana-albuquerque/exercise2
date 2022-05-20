@@ -1,5 +1,5 @@
 import { ReactElement, useState } from "react";
-import SearchDisplay from "../ProductDisplay/searchDisplay"
+import SearchDisplay from '../ProductDisplay/SearchDisplay'
 import "./searchbar.scss";
 import { GrClose } from "react-icons/gr";
 import { FaSearch } from "react-icons/fa";

@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import "./ingredients.scss";
 import { ingredients } from "../../../utils/const";
-import IngredientCard from "../IngredientCard";
+import {IngredientCard} from "../../index";
 
 export default function Ingredient(): ReactElement {
   

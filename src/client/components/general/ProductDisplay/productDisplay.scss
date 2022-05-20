@@ -53,6 +53,7 @@
 
         .quantities {
             @include s.flexCenter(row);
+            text-align: center;
             width: 80%;
             margin: 10px;
         }

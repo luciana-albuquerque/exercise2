@@ -1,6 +1,6 @@
-import React, { ReactElement } from "react";
+import { ReactElement } from "react";
 import "./catalogue.scss";
-import ProductCard from "../ProductCard";
+import { ProductCard } from "../../index"
 import { ProductT } from "../../../interfaces/shared";
 
 type CatalogueT = {

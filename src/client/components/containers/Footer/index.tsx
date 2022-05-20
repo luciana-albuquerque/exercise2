@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import { ReactElement } from "react";
 import "./footer.scss";
 import Button from "../../general/Button";
 import { Link } from "react-router-dom";
@@ -39,12 +39,12 @@ function Footer(): ReactElement {
           </section>
 
           <section className="section">
-            <h5>MORE</h5>
+            <h5><Link to='/contact'>CONTACT</Link></h5>
             <ul>
-              <li>Lorem</li>
-              <li>Lorem</li>
-              <li>Lorem</li>
-              <li>Lorem</li>
+              <li><Link to='/contact/lisbon'>Lisbon</Link></li>
+              <li><Link to='/contact/madrid'>Madrid</Link></li>
+              <li><Link to='/contact/london'>London</Link></li>
+              <li><Link to='/contact/delhi'>Delhi</Link></li>
             </ul>
           </section>
         </nav>
@@ -61,7 +61,7 @@ function Footer(): ReactElement {
               <Link to='/'>Terms of Use</Link>
             </li>
             <li>
-              <Link to='/'>Contact Us</Link>
+              <Link to='/contact'>Contact Us</Link>
             </li>
           </ul>
         </div>
