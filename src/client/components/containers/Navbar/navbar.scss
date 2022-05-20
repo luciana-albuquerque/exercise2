@@ -28,13 +28,6 @@
         }
     }
 
-    .btnLink {
-        border: none;
-        background: none;
-        font-weight: 800;
-        cursor: pointer;
-    }
-
     @include s.mobile {
         @include s.flexCenter(column);
       }

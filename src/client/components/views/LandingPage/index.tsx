@@ -1,13 +1,14 @@
-import React, { useEffect, ReactElement } from "react";
+import { useEffect, ReactElement } from "react";
 import { Alert, Article, Banner, Catalogue, Campaign, Ingredients, Newsletter, Tag, ServicesOffer } from "../../index";
 import { campaignClean, campaignNatural, articleHome } from "../../../utils/const";
 import "./landingPage.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../../actions";
 import { ProductT, StateT } from "../../../interfaces/shared";
+import type { AppDispatch } from "../../../store";
 
 function LandingPage(): ReactElement {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const productList = useSelector((state: StateT) => state.productsReducer.items);
   const loading = useSelector((state: StateT) => state.productsReducer.loading);
 

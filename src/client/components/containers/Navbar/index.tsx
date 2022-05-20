@@ -21,7 +21,7 @@ function Navbar(): ReactElement {
   const logout = async () => {
     localStorage.removeItem("user");
     await signOut(auth);
-    navigate("/login");
+    await navigate("/login");
   };
 
   return (

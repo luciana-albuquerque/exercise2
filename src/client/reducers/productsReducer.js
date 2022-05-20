@@ -6,19 +6,19 @@ const initState = {
 
 const productsReducer = (state = initState, action ) => {
     switch (action.type) {
-        case 'api/fetchProducts_request':
+        case 'FETCH_PRODUCTS_REQUEST':
             return {
                 ...state,
                 loading: true,
                 error: null
             }
-        case 'api/fetchProducts_success':
+        case 'FETCH_PRODUCTS_SUCCESS':
             return {
                 ...state,
                 loading: false,
                 items: action.payload
             }
-        case 'api/fetchProducts_failure':
+        case 'FETCH_PRODUCTS_FAILURE':
             return {
                 ...state,
                 loading: false,

@@ -1,21 +1,14 @@
 import { ReactElement } from "react";
-import { ProductT } from "../../../interfaces/shared";
-import { GrClose } from "react-icons/gr";
+import { ProductDisplayT } from "../../../interfaces/shared";
 import "./productDisplay.scss";
 
-type ProductDisplayT = {
-  list: ProductT[];
-  show?: () => void;
-};
-
-export default function ProductDisplay({ list, show }: ProductDisplayT): ReactElement {
+export default function ProductDisplay({ productsFound }: ProductDisplayT): ReactElement {
   return (
     <div className="productDisplay">
-      <GrClose size={12} style={{ color: "$primaryColor", alignSelf: "flex-end", marginRight:"30px", cursor: "pointer"}} onClick={show}/>
-      {list.length === 0 ? (
+      {productsFound?.length === 0 ? (
         <p>Sorry! No products found</p>
       ) : (
-        list.map((item) => (
+        productsFound?.map((item) => (
           <div className="item" key={item.id}>
             <img src={item.image} alt={item.category} className="product-img" />
             <div className="info">
